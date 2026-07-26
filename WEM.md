@@ -116,16 +116,9 @@ Documents SHALL reference each other instead of duplicating knowledge.
 
 ## Engineering Principles
 
-Engineering principles are defined in a dedicated specification.
+Engineering principles are defined and governed by `ENGINEERING_PRINCIPLES.md`.
 
-Each principle SHALL have:
-
-- permanent identifier
-- title
-- statement
-- rationale
-
-Projects SHALL reference principles by identifier.
+WEM and adopting projects SHALL interpret, apply and reference engineering principles in accordance with that specification.
 
 ---
 

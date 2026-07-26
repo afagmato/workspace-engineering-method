@@ -182,15 +182,14 @@ These are long-term success criteria for the WEM project. They are not all prere
 
 ## Foundational Constraints
 
-The WEM project SHALL comply with the foundational requirements defined in `WEM.md` and with the applicable Engineering Principles.
+The WEM project SHALL comply with the foundational requirements defined in `WEM.md` and with the applicable principles defined in `ENGINEERING_PRINCIPLES.md`.
 
 The following project-specific constraints apply:
 
-- the WEM repository SHALL contain engineering knowledge and SHALL NOT contain functional product implementations;
-- the repository SHALL grow only when a responsibility becomes real;
-- executable applications, libraries, frameworks and tools derived from WEM SHALL be maintained in separate repositories when they become real responsibilities;
+- repository growth and artifact creation SHALL be governed by `WEM-P-001`;
+- repository boundaries between engineering knowledge and functional product implementation SHALL be governed by `WEM-P-002`;
 - the Project Owner SHALL retain the authority defined in the Ownership and Authority section;
-- WEM SHALL be validated through real adopting projects without becoming dependent on their technologies, providers or business domains.
+- WEM validation through real adopting projects SHALL remain consistent with `WEM-P-005` and `WEM-P-008`.
 
 ---
 
@@ -202,7 +201,7 @@ An adopting project SHALL identify the WEM version and status it follows.
 
 An adopting project SHALL follow the applicable normative specifications.
 
-Any deviation SHALL be explicit, justified and traceable. Declaring a deviation does not by itself establish full conformity with WEM.
+Any deviation SHALL follow the deviation governance defined in `ENGINEERING_PRINCIPLES.md`. Declaring a deviation does not by itself establish full conformity with WEM.
 
 Each adopting project retains responsibility for its own:
 

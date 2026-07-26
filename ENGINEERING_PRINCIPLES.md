@@ -2,7 +2,7 @@
 Document: Engineering Principles
 Title: Workspace Engineering Method Engineering Principles
 Version: 1.0.0
-Status: Draft
+Status: Released
 Type: Foundation
 ASI: 5
 Language: English
@@ -30,7 +30,11 @@ The keywords SHALL, SHALL NOT, SHOULD, SHOULD NOT and MAY are to be interpreted 
 
 These principles apply to the development and evolution of WEM.
 
-Projects adopting WEM SHALL apply the principles that are relevant to their responsibilities and SHALL reference them by identifier when documenting significant decisions.
+Projects adopting WEM SHALL evaluate the principles against their responsibilities and SHALL apply every applicable principle.
+
+Any determination that a principle is not applicable, when it affects a significant decision or adoption claim, SHALL be explicit and justified.
+
+Projects SHALL reference applicable principles by identifier when documenting significant decisions.
 
 This specification does not define repository layouts, ADR formats, collaboration workflows, coding rules or technology-specific implementation requirements.
 
@@ -42,8 +46,16 @@ Each principle SHALL contain:
 
 - a permanent identifier;
 - a title;
+- a status;
 - a statement;
 - a rationale.
+
+Principle status SHALL be one of:
+
+- Active;
+- Retired.
+
+The Principle Index is the authoritative source for a principle's status.
 
 The statement defines the normative rule.
 
@@ -69,20 +81,30 @@ The numerical order of an identifier does not indicate priority.
 
 A retired principle SHALL retain its identifier so that historical references remain valid.
 
+A principle reference SHALL be interpreted within the WEM version declared by the adopting project.
+
+When historical meaning is relevant, a reference SHOULD identify both the principle identifier and the applicable WEM version.
+
+Example:
+
+```text
+WEM-P-003 — WEM 1.0.0
+```
+
 ---
 
 ## Principle Index
 
-| Identifier | Title |
-| --- | --- |
-| WEM-P-001 | Responsibility Before Structure |
-| WEM-P-002 | Separation of Knowledge and Products |
-| WEM-P-003 | Explicit and Traceable Decisions |
-| WEM-P-004 | Proportional Governance |
-| WEM-P-005 | Technology-Independent Method |
-| WEM-P-006 | Canonical Source of Normative Knowledge |
-| WEM-P-007 | Human Accountability |
-| WEM-P-008 | Knowledge Preservation Through Evolution |
+| Identifier | Title | Status |
+| --- | --- | --- |
+| WEM-P-001 | Responsibility Before Structure | Active |
+| WEM-P-002 | Separation of Knowledge and Products | Active |
+| WEM-P-003 | Explicit and Traceable Decisions | Active |
+| WEM-P-004 | Proportional Governance | Active |
+| WEM-P-005 | Technology-Independent Method | Active |
+| WEM-P-006 | Canonical Source of Normative Knowledge | Active |
+| WEM-P-007 | Human Accountability | Active |
+| WEM-P-008 | Knowledge Preservation Through Evolution | Active |
 
 ---
 
@@ -176,17 +198,17 @@ Keeping the method independent from them allows WEM to remain reusable, replacea
 
 ### Statement
 
-Each normative responsibility SHALL have one canonical source.
+Each normative requirement SHALL have one authoritative definition.
 
-Other documents SHALL reference that source instead of restating its normative knowledge as an independent definition.
+Other specifications MAY reference, apply or specialize that requirement within their own responsibilities, but SHALL NOT redefine it inconsistently.
 
-Supporting summaries MAY exist when they are clearly non-normative and do not replace the canonical source.
+Supporting summaries MAY exist when they are clearly non-normative and do not replace the authoritative definition.
 
 ### Rationale
 
 Duplicated normative knowledge diverges over time and creates ambiguity about which statement governs.
 
-A canonical source preserves consistency while allowing modular specifications to remain focused on their own responsibilities.
+An authoritative definition preserves consistency while allowing modular specifications to remain focused on their own responsibilities.
 
 ---
 
@@ -224,13 +246,13 @@ Preserving knowledge allows future evolution to build on experience instead of s
 
 ## Applying the Principles
 
-Principles SHALL be applied together rather than interpreted in isolation.
+Applicable principles SHALL be interpreted and applied together rather than in isolation.
 
 An apparent conflict between principles SHALL be made explicit and evaluated with governance proportional to the scope and cost of the decision.
 
 A principle SHALL NOT be silently ignored because compliance is inconvenient.
 
-Any accepted deviation SHALL be explicit, justified and traceable.
+Any accepted deviation SHALL be explicit, justified, traceable and approved by the responsible human decision authority.
 
 ---
 
@@ -238,7 +260,9 @@ Any accepted deviation SHALL be explicit, justified and traceable.
 
 Adding a principle, retiring a principle or changing its normative meaning is a foundational decision and SHALL be classified as ASI-5.
 
-Editorial corrections that do not change normative meaning SHALL be classified according to their actual scope and cost of change.
+Editorial corrections that do not change normative meaning are not foundational decisions.
+
+They require explicit ASI classification only when they meet the applicable ASI threshold and SHALL otherwise follow proportional governance.
 
 Changes SHALL preserve permanent identifiers and the traceability of historical references.
 
