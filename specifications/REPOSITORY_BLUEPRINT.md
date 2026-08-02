@@ -345,27 +345,26 @@ Conceptual examples and templates remain permitted only when they satisfy their 
 
 ---
 
-## Transitional Application
+## Structural Application
 
-This Draft is published after the repository architecture has been approved but before it is physically applied.
+The repository architecture approved in `decisions/WEM-ADR-001.md` was physically applied on 2026-08-02 through the separately authorized ASI-4 operation recorded by commit `d7b2409`.
 
-Until a separate structural operation is explicitly authorized and applied:
+The controlled operation:
 
-- `REPOSITORY_BLUEPRINT.md` SHALL remain at the repository root;
-- `WEM-ADR-001.md` SHALL remain at the repository root;
-- existing tracked artifacts SHALL NOT be moved solely to anticipate acceptance;
-- no canonical responsibility directory SHALL be created;
-- `CURRENT_CONTEXT.md` SHALL NOT be removed.
+- activated `specifications/` by moving `ADR_SPECIFICATION.md` and `REPOSITORY_BLUEPRINT.md` into their canonical location;
+- activated `decisions/` by moving `WEM-ADR-001.md` into its canonical location;
+- preserved `WEM.md`, `PROJECT_CHARTER.md` and `ENGINEERING_PRINCIPLES.md` at the repository root;
+- aligned the tracked continuity filename to `CURRENT_CONTEXT.md` without changing its root location;
+- updated references affected by the new canonical paths;
+- created no other canonical responsibility directory.
 
-The physical application operation SHALL create `specifications/` and `decisions/` only by moving their first real artifacts into them.
+The physical application does not change this specification's Draft status.
 
-The exact tracked filename is `CURRENT_CONTEXT.md`.
-
-Any required case alignment SHALL be handled only in an explicitly authorized structural operation.
-
-Its temporary retention at the repository root does not make it canonical normative knowledge.
+The temporary retention of `CURRENT_CONTEXT.md` at the repository root does not make it canonical normative knowledge.
 
 This specification does not determine the long-term responsibility, location or retirement of `CURRENT_CONTEXT.md`.
+
+Future structural changes SHALL follow the applicable ASI, Architectural Pause and ADR governance.
 
 ---
 

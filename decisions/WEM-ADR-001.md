@@ -238,13 +238,20 @@ ASI-4 — Repository and architectural structure
 
 ## Implementation Notes
 
-Implementation remains intentionally deferred.
+The repository architecture was physically applied on 2026-08-02 through the separately authorized ASI-4 operation recorded by commit `d7b2409`.
 
-This ADR accepts the repository architecture but does not perform or independently authorize physical repository restructuring.
+The implementation:
 
-A separate explicitly authorized ASI-4 structural operation remains required.
+- created `specifications/` by moving `ADR_SPECIFICATION.md` and `REPOSITORY_BLUEPRINT.md` into their canonical location;
+- created `decisions/` by moving `WEM-ADR-001.md` into its canonical location;
+- preserved the foundation specifications at the repository root;
+- aligned `CURRENT_CONTEXT.md` to its approved tracked casing without changing its root location;
+- updated affected references;
+- created no other canonical responsibility directory.
 
-That operation will create each approved directory together with its first real artifact, update affected references and preserve version-control history.
+This implementation completes the structural operation authorized by this ADR.
+
+It does not determine the long-term responsibility, location or retirement of `CURRENT_CONTEXT.md` and does not authorize additional repository structure.
 
 ---
 
