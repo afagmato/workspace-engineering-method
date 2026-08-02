@@ -80,7 +80,7 @@ The architecture must:
 
 `AGENT_COLLABORATION.md` is local operational context and is not part of the maintained repository architecture.
 
-`current_context.md` is a transitional continuity artifact. It SHALL NOT be removed as part of this decision-document publication. Its exact physical casing and long-term responsibility will be addressed during a later authorized structural operation.
+`CURRENT_CONTEXT.md` is a transitional continuity artifact. It SHALL NOT be removed as part of this decision-document publication. Its exact physical casing and long-term responsibility will be addressed during a later authorized structural operation.
 
 This decision is ASI-4 because it establishes canonical repository boundaries and constrains the placement of future artifacts.
 
@@ -124,7 +124,7 @@ When the architecture is physically applied:
 
 Publication of this Accepted ADR and the Draft Repository Blueprint does not authorize or perform those physical changes.
 
-`current_context.md` will remain present until a separate authorized decision determines its long-term responsibility, location or retirement. This ADR does not authorize its removal.
+`CURRENT_CONTEXT.md` will remain present until a separate authorized decision determines its long-term responsibility, location or retirement. This ADR does not authorize its removal.
 
 Projects adopting WEM will not be required to copy the WEM repository tree. They will be required to define equivalent responsibility boundaries, canonical locations and discovery rules within their own repository architecture.
 
@@ -231,8 +231,8 @@ ASI-4 — Repository and architectural structure
 - `WEM.md`;
 - `PROJECT_CHARTER.md`;
 - `ENGINEERING_PRINCIPLES.md`;
-- `ADR_SPECIFICATION.md`;
-- `REPOSITORY_BLUEPRINT.md`.
+- `specifications/ADR_SPECIFICATION.md`;
+- `specifications/REPOSITORY_BLUEPRINT.md`.
 
 ---
 

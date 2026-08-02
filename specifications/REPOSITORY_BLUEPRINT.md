@@ -125,7 +125,7 @@ Examples include ADR governance and repository architecture.
 
 Architecture Decision Records preserve the context, decision, consequences, ASI classification and authority of significant decisions.
 
-ADRs SHALL comply with `ADR_SPECIFICATION.md`.
+ADRs SHALL comply with `specifications/ADR_SPECIFICATION.md`.
 
 An ADR is the authoritative historical record of why a decision was made. It SHALL NOT replace the normative specification responsible for the resulting rules.
 
@@ -355,17 +355,17 @@ Until a separate structural operation is explicitly authorized and applied:
 - `WEM-ADR-001.md` SHALL remain at the repository root;
 - existing tracked artifacts SHALL NOT be moved solely to anticipate acceptance;
 - no canonical responsibility directory SHALL be created;
-- `current_context.md` SHALL NOT be removed.
+- `CURRENT_CONTEXT.md` SHALL NOT be removed.
 
 The physical application operation SHALL create `specifications/` and `decisions/` only by moving their first real artifacts into them.
 
-The exact tracked filename is `current_context.md`.
+The exact tracked filename is `CURRENT_CONTEXT.md`.
 
 Any required case alignment SHALL be handled only in an explicitly authorized structural operation.
 
 Its temporary retention at the repository root does not make it canonical normative knowledge.
 
-This specification does not determine the long-term responsibility, location or retirement of `current_context.md`.
+This specification does not determine the long-term responsibility, location or retirement of `CURRENT_CONTEXT.md`.
 
 ---
 
