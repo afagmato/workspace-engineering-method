@@ -149,7 +149,7 @@ During an Architectural Pause:
 - implementation stops
 - alternatives are evaluated
 - consequences are documented
-- ADR creation is evaluated
+- the applicable ADR requirements defined in `specifications/ADR_SPECIFICATION.md` are applied
 
 Implementation SHALL NOT continue until the pause is complete.
 
@@ -157,18 +157,19 @@ Implementation SHALL NOT continue until the pause is complete.
 
 ## Architecture Decision Records
 
-Significant engineering decisions SHALL be documented using Architecture Decision Records (ADR).
+Architecture Decision Records (ADR) preserve the context, decision, consequences, classification and responsible authority of engineering decisions that require durable traceability.
 
-Each ADR SHALL include:
+`specifications/ADR_SPECIFICATION.md` is the canonical source for:
 
-- Identifier
-- Title
-- Status
-- Context
-- Decision
-- Consequences
-- ASI Level
-- Related Principles
+- ADR applicability;
+- required content;
+- lifecycle;
+- decision authority;
+- identifier governance;
+- the relationship between ADRs and ASI;
+- the relationship between ADRs and Architectural Pauses.
+
+WEM and adopting projects SHALL apply the ADR governance defined in that specification.
 
 ---
 

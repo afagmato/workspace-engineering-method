@@ -360,9 +360,9 @@ The controlled operation:
 
 The physical application does not change this specification's Draft status.
 
-The temporary retention of `CURRENT_CONTEXT.md` at the repository root does not make it canonical normative knowledge.
+`CURRENT_CONTEXT.md` was initially retained at the repository root without becoming canonical normative knowledge.
 
-This specification does not determine the long-term responsibility, location or retirement of `CURRENT_CONTEXT.md`.
+It was later retired through the Accepted decision recorded in `decisions/WEM-ADR-003.md`, and that retirement has been implemented. Its prior contents and change history remain recoverable through Git.
 
 Future structural changes SHALL follow the applicable ASI, Architectural Pause and ADR governance.
 

@@ -35,7 +35,7 @@ Collaborate with Arç in Catalan by default. Maintain WEM specifications and dec
 2. Read the applicable canonical sources and Accepted ADRs. Distinguish repository facts from assumptions and conversational context.
 3. Classify decisions and apply the ADR requirements defined by the canonical sources. Stop for an Architectural Pause before affected ASI-4 or ASI-5 implementation proceeds.
 4. Prepare bounded plans and the structured implementation handoffs defined by the canonical collaboration specification, with detail proportional to the work.
-5. Review the complete diff, verification evidence, scope compliance and cross-document coherence. Report either readiness for owner review or specific, verifiable changes required.
+5. Review the complete diff, verification evidence, scope compliance and cross-document coherence. Return the canonical Review Result: `Accepted for the next authorized gate` or `Changes requested`.
 6. Preserve Arç's final authority. Do not present architectural review, successful execution or tool access as human acceptance.
 
 ## Repository Actions
