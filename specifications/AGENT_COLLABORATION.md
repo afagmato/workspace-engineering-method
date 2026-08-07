@@ -18,6 +18,8 @@ This specification defines the roles, authority boundaries and collaboration con
 
 It establishes explicit handoffs, review workflow, controlled concurrency, conflict prevention, interaction boundaries and completion criteria while preserving final human accountability.
 
+It also defines provider-independent logical contracts that allow authorized collaboration to be automated without turning human authority into a requirement for human message mediation.
+
 ---
 
 ## Normative Language
@@ -32,9 +34,9 @@ This document remains Draft throughout Sprint 0 and until the required cross-doc
 
 While `decisions/WEM-ADR-002.md` remains Proposed, the collaboration governance defined here is not governing and SHALL NOT be treated as an accepted WEM responsibility.
 
-If `decisions/WEM-ADR-002.md` becomes Accepted, this collaboration model becomes authorized for controlled application while this specification remains Draft.
+Because `decisions/WEM-ADR-002.md` and `decisions/WEM-ADR-006.md` are Accepted, the role-based and automation-ready collaboration model is authorized for controlled application while this specification remains Draft.
 
-Publication of this Draft does not create provider-specific entry files or transfer decision authority.
+Publication of this Draft does not create provider-specific entry files, executable orchestration products or transferred decision authority.
 
 ---
 
@@ -49,8 +51,15 @@ This specification governs:
 - controlled concurrency and workspace ownership;
 - conflict detection and escalation;
 - optional programmatic orchestration;
+- Authorization Envelopes;
+- structured Implementation Handoffs;
+- Builder Results and Verification Evidence;
+- Review Results;
+- bounded correction loops;
+- proportional traceability and persistence;
+- replaceable adapter boundaries;
 - completion criteria for collaborative tasks;
-- operational assignment of participants to roles.
+- proportional assignment of participants to roles.
 
 This specification does not define:
 
@@ -61,7 +70,9 @@ This specification does not define:
 - Sprint planning or milestone sequence;
 - provider-specific prompts or instructions;
 - native communication capabilities of a particular platform;
-- `AGENTS.md`, `CLAUDE.md` or other provider-specific repository entry files.
+- provider-specific repository entry files;
+- executable orchestrators, scripts, command-line tools, services or pipelines;
+- market validation, finance or general business governance.
 
 Those concerns remain governed by their responsible specifications or future explicitly activated responsibilities.
 
@@ -72,6 +83,7 @@ Those concerns remain governed by their responsible specifications or future exp
 This specification applies the following Engineering Principles as authoritatively defined in `ENGINEERING_PRINCIPLES.md`:
 
 - `WEM-P-001` — Responsibility Before Structure;
+- `WEM-P-002` — Separation of Knowledge and Products;
 - `WEM-P-003` — Explicit and Traceable Decisions;
 - `WEM-P-004` — Proportional Governance;
 - `WEM-P-005` — Technology-Independent Method;
@@ -92,7 +104,9 @@ This specification applies collaboration-specific requirements within the bounda
 - `ENGINEERING_PRINCIPLES.md`, for permanent Engineering Principles and deviation governance;
 - `specifications/ADR_SPECIFICATION.md`, for ADR applicability, lifecycle and approval;
 - `specifications/REPOSITORY_BLUEPRINT.md`, for canonical artifact responsibilities and locations;
-- `decisions/WEM-ADR-001.md`, for the accepted WEM repository architecture.
+- `decisions/WEM-ADR-001.md`, for the accepted WEM repository architecture;
+- `decisions/WEM-ADR-002.md`, for the accepted role-based, human-controlled collaboration architecture;
+- `decisions/WEM-ADR-006.md`, for the accepted automation-ready collaboration architecture.
 
 This specification SHALL reference those authoritative definitions and SHALL NOT redefine them inconsistently.
 
@@ -112,11 +126,15 @@ Roles define responsibilities and authority, not a particular person, provider, 
 
 Operational assignments MAY change without changing the normative role definitions.
 
+Participants, agents, models and providers assigned to roles are replaceable operational configuration and SHALL NOT become normative WEM dependencies.
+
 A participant MAY perform more than one role when the assignment is explicit and the required authority and review separation are preserved.
 
 The participant that implements a significant change SHOULD NOT be its only reviewer.
 
 No combination of roles SHALL allow an AI collaborator to assume final human decision authority.
+
+WEM does not require any fixed number of AI participants.
 
 ---
 
@@ -125,6 +143,10 @@ No combination of roles SHALL allow an AI collaborator to assume final human dec
 The Project Owner and Final Authority is a human role.
 
 The Project Owner and Final Authority retains the authority defined in `PROJECT_CHARTER.md`, including approval of ASI-4 and ASI-5 decisions.
+
+Human authority SHALL NOT be interpreted as requiring the human authority to transport every message between authorized participants.
+
+An explicit human authorization MAY permit actions within defined boundaries to proceed without repeated human mediation when the applicable governance does not reserve a later human decision.
 
 The Architect and Reviewer and the Builder MAY analyze, propose, implement, verify and document work within explicitly authorized scope.
 
@@ -195,32 +217,97 @@ If implementation reveals an architectural conflict or an inadequate approved de
 
 ---
 
-## Explicit Handoffs
+## Automation-Ready Collaboration
 
-A transfer of responsibility between collaboration roles SHALL use an explicit handoff.
+WEM collaboration SHALL remain executable through interactive and non-interactive mechanisms without redefining its governance.
 
-The handoff SHALL identify:
+Automation MAY use command-line invocation, APIs, continuous integration, MCP or other current or future mechanisms.
 
-- the objective;
-- relevant maintained context and accepted decisions;
-- assumptions and known uncertainties;
-- constraints and authority boundaries;
-- files or responsibilities in scope;
-- files or responsibilities out of scope;
-- expected deliverables;
-- acceptance criteria;
-- required verification;
+Automation SHALL remain optional and SHALL be applied with governance proportional to the scope and cost of the work.
+
+Human Final Authority SHALL be preserved without requiring human message mediation between authorized participants.
+
+An initial human authorization MAY allow actions within explicitly approved boundaries to proceed without repeated human mediation when the applicable governance does not reserve a later human decision.
+
+Automation SHALL NOT transfer authority, expand approved scope or bypass an Architectural Pause, required ADR or human approval.
+
+---
+
+## Authorization Envelope
+
+Every automated collaboration execution SHALL operate within an explicit Authorization Envelope.
+
+The Authorization Envelope SHALL identify, with detail proportional to the execution:
+
+- objective;
+- approved scope;
+- applicable authority;
+- permitted participants or tools;
+- permitted files and responsibilities;
+- permitted repository actions;
+- applicable limits;
+- human-reserved decisions;
 - stopping and escalation conditions.
 
-The depth and formality of a handoff SHALL be proportional to the scope and cost of the transferred work.
+Applicable limits SHALL include attempt or iteration limits and SHOULD include time or cost limits when those limits are relevant to the execution.
 
-A single bounded task instruction MAY satisfy the handoff requirements when every required element is explicit or identified as not applicable.
+Repository actions such as commit, push, merge, publication or release SHALL be permitted only when the responsible authority explicitly includes the applicable action in the Authorization Envelope or provides a separate authorization.
 
-The receiving role SHALL inspect the actual repository state before relying on the handoff.
+Tool access, repository permissions and successful execution SHALL NOT expand the Authorization Envelope.
 
-A handoff SHALL NOT silently transfer approval authority.
+An Authorization Envelope SHALL NOT pre-authorize a decision whose governing specification requires human approval after evaluation of the resulting proposal, evidence or review.
 
-Conversation history MAY provide operational context, but SHALL NOT replace maintained specifications, accepted ADRs or explicit task boundaries.
+---
+
+## Proportional Role Topology
+
+WEM SHALL NOT require two AI participants or any fixed number of automated participants.
+
+A participant MAY perform multiple roles or authorized functions when the assignment is explicit and proportional governance permits it.
+
+The Architect and Reviewer role contains distinct Architect and Reviewer functions that MAY be assigned separately without creating additional normative roles.
+
+For significant changes, the Builder SHOULD NOT be the only Reviewer.
+
+Combining roles or functions SHALL NOT combine or transfer their authorities.
+
+ASI-4 and ASI-5 decisions SHALL continue to require the human intervention defined by their governing specifications.
+
+---
+
+## Structured Implementation Handoff
+
+The Architect function SHALL transform relevant context and approved decisions into a structured, verifiable Implementation Handoff for the Builder.
+
+The Implementation Handoff SHALL identify, with detail proportional to the work:
+
+- task identifier;
+- objective;
+- base commit or starting repository state;
+- governing specifications and Accepted ADRs;
+- approved decisions;
+- assumptions and uncertainties;
+- scope in;
+- scope out;
+- expected deliverables;
+- acceptance criteria;
+- verification;
+- permitted actions;
+- stopping and escalation conditions.
+
+The Implementation Handoff SHALL be sufficient for the Builder to interpret the task without access to the Architect's private conversation or conversational state.
+
+Conversation MAY provide input context, but SHALL NOT be the execution contract.
+
+The depth and formality of an Implementation Handoff SHALL be proportional to the scope and cost of the transferred work.
+
+A single bounded task instruction MAY satisfy the Implementation Handoff requirements when every required element is explicit or identified as not applicable.
+
+When the same participant performs multiple authorized functions, logical collaboration contracts MAY be combined or represented within the execution context instead of requiring separate persistent artifacts, provided that scope, authority, acceptance criteria, verification and escalation boundaries remain explicit and verifiable.
+
+The receiving function SHALL inspect the actual repository state before relying on the Implementation Handoff.
+
+An Implementation Handoff SHALL NOT silently transfer approval authority.
 
 ---
 
@@ -254,26 +341,21 @@ Approval SHALL be explicit and SHALL NOT be inferred solely from continued conve
 
 ### Phase 5 — Implementation Handoff
 
-The Architect and Reviewer prepares a bounded handoff for the Builder.
+The Architect and Reviewer prepares the Structured Implementation Handoff required by this specification.
 
 ### Phase 6 — Implementation
 
-The Builder verifies the starting state, implements the approved scope and produces verification evidence.
+The Builder verifies the starting state, implements the approved scope and produces the Builder Result and Verification Evidence required by this specification.
 
 ### Phase 7 — Review
 
 The Architect and Reviewer reviews the complete diff, verification evidence, scope compliance and documentation coherence.
 
-The review result SHALL identify either:
-
-- Ready for owner review; or
-- Changes requested, with specific and verifiable findings.
+The Reviewer produces the Review Result required by this specification.
 
 ### Phase 8 — Correction
 
-The Builder addresses approved findings and repeats the required verification.
-
-Review and correction MAY repeat until no blocking finding remains.
+The Builder addresses authorized findings and repeats the required verification within the Bounded Correction Loop.
 
 ### Phase 9 — Human Acceptance
 
@@ -285,7 +367,81 @@ Human acceptance SHALL NOT be inferred from continued conversation, tool access 
 
 ### Phase 10 — Repository Action
 
-After the required acceptance and repository authorization, the responsible participant verifies Git state, reviews the final staged diff and performs only the authorized commit, merge, publication or release action.
+After the required acceptance and repository authorization, the responsible participant verifies Git state, reviews the final staged diff and performs only the repository actions permitted by the Authorization Envelope or a separate explicit authorization.
+
+---
+
+## Builder Result and Verification Evidence
+
+The Builder SHALL return a structured Builder Result that identifies:
+
+- implementation status;
+- changed files;
+- the complete diff or its recoverable location;
+- tests and validation performed;
+- failures and limitations;
+- deviations;
+- unresolved questions;
+- repository state;
+- confirmation that the Authorization Envelope was respected.
+
+Verification Evidence SHALL be sufficient to evaluate the applicable acceptance criteria and SHALL identify incomplete, failed or unavailable validation.
+
+Tool completion or a successful command SHALL NOT by itself establish successful implementation.
+
+---
+
+## Review Result
+
+The Reviewer SHALL return one explicit technical Review Result:
+
+- Accepted for the next authorized gate; or
+- Changes requested.
+
+Each finding in a Changes requested result SHALL be specific and verifiable.
+
+Accepted for the next authorized gate means that the reviewed result satisfies the applicable technical review contract.
+
+It SHALL NOT be interpreted as human acceptance, ADR acceptance, publication approval or release approval when one of those decisions is required.
+
+---
+
+## Traceability and Persistence
+
+A structured Authorization Envelope, Implementation Handoff, Builder Result, Review Result or item of Verification Evidence SHALL NOT by itself require permanent storage.
+
+Persistence SHALL be proportional to the applicable governance, the significance of the work and the value of the artifact as reusable knowledge.
+
+Significant decisions and evidence required by their governing specifications SHALL remain traceable according to those specifications.
+
+Routine execution messages, intermediate contracts and verification details MAY remain transient when their preservation is not required for acceptance, traceability, audit or reusable knowledge.
+
+When persistent traceability is required, the responsible maintained artifact or recoverable location SHALL be identified explicitly.
+
+---
+
+## Bounded Correction Loop
+
+Builder and Reviewer functions MAY repeat implementation, verification, review and correction automatically while:
+
+- the work remains within the Authorization Envelope;
+- no decision reserved to human authority is required;
+- the approved architecture does not change;
+- the applicable attempt, iteration, time and cost limits are not exceeded;
+- no stopping or escalation condition occurs.
+
+The maximum number of correction cycles SHALL be defined by the Authorization Envelope or explicitly authorized operational configuration.
+
+Time and cost limits SHOULD be defined when they are relevant to the execution.
+
+The correction loop SHALL stop and escalate when:
+
+- a configured limit is reached;
+- an architectural conflict appears;
+- required authority is unavailable;
+- the base commit or starting repository state is no longer valid;
+- a requested correction would exceed approved scope;
+- another stopping or escalation condition in the Authorization Envelope occurs.
 
 ---
 
@@ -348,53 +504,67 @@ Architectural conflicts SHALL return to the Architect and Reviewer and, when req
 
 AI collaborators SHALL NOT assume native conversational context with another AI collaborator.
 
-In the initial operational assignment, Codex and Claude Code do not share a native conversation, shared model memory or automatically synchronized intent.
-
-Their default coordination SHALL therefore use:
+Coordination between participants SHALL therefore use, as applicable:
 
 - maintained repository specifications and Accepted ADRs;
-- explicit handoffs;
-- bounded implementation instructions;
+- Authorization Envelopes;
+- Structured Implementation Handoffs;
+- Builder Results and Verification Evidence;
+- Review Results;
 - Git status, diffs and commits;
-- review findings;
-- human-mediated decisions.
+- explicitly authorized orchestration mechanisms;
+- human decisions when reserved or required by the applicable governance.
 
 The ability of multiple agents to read the same repository SHALL NOT be treated as evidence that they share conversational context.
+
+Human authority SHALL NOT require human transport of messages that an authorized mechanism can transfer within the Authorization Envelope.
 
 ---
 
 ## Programmatic Orchestration
 
-Command-line invocation, automation APIs or similar mechanisms MAY be used to invoke one collaborator from another only when that orchestration has been explicitly authorized.
+Command-line invocation, automation APIs or similar mechanisms MAY be used to invoke or coordinate collaborators only within an applicable Authorization Envelope.
 
 Programmatic orchestration is not native agent-to-agent communication and SHALL NOT transfer human approval authority.
 
-Before invoking another collaborator programmatically, the orchestrating role SHALL define:
+Programmatic orchestration SHALL use the Structured Implementation Handoff, Builder Result, Verification Evidence and Review Result requirements applicable to the execution.
 
-- the exact task;
-- the authorized participant or tool;
-- permitted files and actions;
-- required permissions;
-- expected output and verification;
-- stopping and escalation conditions;
-- timeout or failure handling;
-- how the result will be reviewed.
-
-The orchestrating role remains responsible for reporting the invocation result and preserving authority boundaries.
+The orchestrating function remains responsible for reporting the invocation result, enforcing applicable limits and preserving authority boundaries.
 
 Programmatic orchestration SHALL NOT bypass an Architectural Pause, ADR requirement or required human approval.
 
 ---
 
-## Provider-Specific Repository Adapters
+## Replaceable Adapters
 
-Provider-specific repository entry files such as `AGENTS.md` and `CLAUDE.md` are outside the scope of this specification.
+Participants and automation mechanisms MAY integrate through replaceable adapters.
 
-They SHALL NOT be created until their separate responsibilities are explicitly activated.
+An adapter MAY describe:
 
-If introduced later, they SHOULD remain concise adapters that reference canonical WEM specifications and Accepted ADRs.
+- invocation method;
+- input and output format;
+- available capabilities;
+- permission model;
+- timeout and failure behavior;
+- provider-specific restrictions.
 
-They SHALL NOT become independent sources of collaboration governance, project architecture or human authority.
+An adapter SHALL remain an operational interface and SHALL reference the applicable canonical WEM specifications and Accepted ADRs.
+
+An adapter SHALL NOT redefine roles, authority, ASI, ADR governance, collaboration governance or repository architecture.
+
+Replacing a participant, model, provider or invocation mechanism SHALL NOT require a change to normative WEM governance unless the replacement changes a normative responsibility or authority boundary.
+
+---
+
+## Separation from Executable Products
+
+This specification defines governance and logical collaboration contracts only.
+
+Executable orchestrators, scripts, command-line tools, services, pipelines, queue systems and runtime integrations are product implementations outside the responsibility of the WEM knowledge repository.
+
+When an executable orchestration responsibility becomes real, it SHALL be maintained as a separate product that adopts WEM and defines its own repository architecture, licensing and decision governance.
+
+Physical templates, temporary handoff files and queue artifacts SHALL NOT be created in the WEM repository merely because their logical information is defined by this specification.
 
 ---
 
@@ -406,6 +576,7 @@ A collaborative task is complete only when:
 - required verification has completed;
 - failures, deviations and limitations have been disclosed;
 - the complete diff has been reviewed;
+- the applicable Authorization Envelope has been respected;
 - blocking findings have been resolved or explicitly accepted;
 - the Project Owner and Final Authority has accepted the result when required;
 - repository actions have been authorized and remain traceable;
@@ -415,27 +586,9 @@ Completion of implementation does not by itself authorize commit, publication or
 
 ---
 
-## Initial Operational Assignment
-
-This section records non-normative operational context for the initial WEM collaboration environment.
-
-It does not redefine the generic roles or their authority.
-
-| Participant | Initial role assignment |
-| --- | --- |
-| Arç | Project Owner and Final Authority |
-| Codex | Architect and Reviewer |
-| Claude Code | Builder |
-
-Codex and Claude Code remain replaceable implementations of their assigned roles.
-
-A change to this operational assignment does not change WEM governance unless it also changes a normative role, responsibility or authority boundary.
-
----
-
 ## Evolution
 
-Changes to generic roles, authority boundaries, required handoffs, review responsibility, controlled concurrency or completion governance affect the collaboration architecture and SHALL be classified as ASI-4 or higher according to their actual scope and cost of change.
+Changes to generic roles, authority boundaries, Authorization Envelopes, logical collaboration contracts, review responsibility, controlled concurrency, correction-loop governance or completion governance affect the collaboration architecture and SHALL be classified as ASI-4 or higher according to their actual scope and cost of change.
 
 Provider-specific operational instructions MAY follow lower governance when they do not change normative collaboration meaning or human authority.
 

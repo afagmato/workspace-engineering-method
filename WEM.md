@@ -96,21 +96,17 @@ Knowledge generated during development SHALL become reusable whenever possible.
 
 ## Modular Specification
 
-WEM is composed of independent specifications.
+WEM is composed of modular specifications with distinct responsibilities.
 
 This document defines the engineering method only.
 
-Additional specifications define:
+Additional specifications are introduced only when a distinct normative responsibility becomes real, in accordance with `WEM-P-001`.
 
-- Engineering Principles
-- Repository Blueprint
-- Project Charter
-- AI Agents
-- Standards
-- Architecture Decision Records
-- Coding Standards
+The Repository Blueprint governs how specification responsibilities and canonical locations are represented in the WEM repository.
 
-Documents SHALL reference each other instead of duplicating knowledge.
+The public repository interface provides non-normative navigation to the currently maintained specifications, decisions and supporting artifacts.
+
+Documents SHALL reference the canonical source responsible for normative knowledge instead of duplicating it.
 
 ---
 
