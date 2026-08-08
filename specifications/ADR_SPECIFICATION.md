@@ -2,7 +2,7 @@
 Document: ADR Specification
 Title: Workspace Engineering Method Architecture Decision Records
 Version: 1.0.0
-Status: Draft
+Status: Released
 Type: Governance
 ASI: 4
 Language: English

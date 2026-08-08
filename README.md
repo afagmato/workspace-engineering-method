@@ -4,7 +4,7 @@
 
 Workspace Engineering Method (WEM) is a technology-independent engineering method for designing, building and evolving sustainable software systems.
 
-**WEM 1.0.0 — Draft**
+**WEM 1.0.0 — Released**
 
 ## What is WEM?
 
@@ -17,9 +17,9 @@ The canonical definition of the method is maintained in [WEM.md](WEM.md).
 | | |
 | --- | --- |
 | Version | 1.0.0 |
-| Status | Draft |
+| Status | Released |
 
-WEM remains under development. Its specification ecosystem has not yet completed the final cross-document coherence review required for release.
+WEM 1.0.0 is the first coordinated Released version of the specification ecosystem. It completed the required cross-document coherence review and received explicit Project Owner approval.
 
 ## Core Idea
 
@@ -44,12 +44,12 @@ This is an explanatory summary. See [WEM.md](WEM.md) for the maintained engineer
 
 ## Adoption
 
-Projects adopt WEM as a methodology, not as a technical dependency. Because WEM remains Draft, the current specification is suitable for evaluation rather than stable release adoption.
+Projects adopt WEM as a methodology, not as a technical dependency. WEM 1.0.0 Released provides a stable version reference for adoption while each adopting project retains responsibility for its own architecture, implementation, risks and outcomes.
 
-A project evaluating the current specification can identify it as:
+A project adopting this release can identify it as:
 
 ```text
-Methodology: WEM 1.0.0 — Draft
+Methodology: WEM 1.0.0 — Released
 ```
 
 See [PROJECT_CHARTER.md](PROJECT_CHARTER.md) and [WEM.md](WEM.md) for the maintained adoption responsibilities and method definition.

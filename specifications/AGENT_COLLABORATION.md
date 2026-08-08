@@ -2,7 +2,7 @@
 Document: Agent Collaboration
 Title: Workspace Engineering Method Human and AI Collaboration Governance
 Version: 1.0.0
-Status: Draft
+Status: Released
 Type: Governance
 ASI: 4
 Language: English
@@ -30,13 +30,11 @@ The keywords SHALL, SHALL NOT, SHOULD, SHOULD NOT and MAY are to be interpreted 
 
 ## Status and Authority
 
-This document remains Draft throughout Sprint 0 and until the required cross-document coherence review is complete.
+This specification is Released as part of WEM 1.0.0 following the required cross-document coherence review and explicit Project Owner approval recorded in `decisions/WEM-ADR-008.md`.
 
-While `decisions/WEM-ADR-002.md` remains Proposed, the collaboration governance defined here is not governing and SHALL NOT be treated as an accepted WEM responsibility.
+`decisions/WEM-ADR-002.md` and `decisions/WEM-ADR-006.md` are Accepted, and the role-based, automation-ready collaboration model defined here governs WEM collaboration.
 
-Because `decisions/WEM-ADR-002.md` and `decisions/WEM-ADR-006.md` are Accepted, the role-based and automation-ready collaboration model is authorized for controlled application while this specification remains Draft.
-
-Publication of this Draft does not create provider-specific entry files, executable orchestration products or transferred decision authority.
+Release of this specification does not create additional provider-specific entry files, executable orchestration products or transferred decision authority.
 
 ---
 

@@ -2,7 +2,7 @@
 Document: Repository Blueprint
 Title: Workspace Engineering Method Repository Blueprint
 Version: 1.0.0
-Status: Draft
+Status: Released
 Type: Architecture
 ASI: 4
 Language: English
@@ -30,13 +30,11 @@ The keywords SHALL, SHALL NOT, SHOULD, SHOULD NOT and MAY are to be interpreted 
 
 ## Status and Authority
 
-This document remains Draft throughout Sprint 0 and until the required cross-document coherence review is complete.
+This specification is Released as part of WEM 1.0.0 following the required cross-document coherence review and explicit Project Owner approval recorded in `decisions/WEM-ADR-008.md`.
 
-While `WEM-ADR-001` remains Proposed, the repository architecture defined here is not governing and SHALL NOT be physically applied.
+`decisions/WEM-ADR-001.md` is Accepted, and the repository architecture defined here has been physically applied as recorded in the Structural Application section.
 
-If `WEM-ADR-001` becomes Accepted, this architecture becomes authorized for controlled application while this specification remains Draft.
-
-Publication of this Draft does not by itself authorize directory creation, file movement or artifact retirement.
+Release of this specification does not by itself authorize future directory creation, file movement or artifact retirement. Those operations remain subject to their applicable decision and repository-action governance.
 
 ---
 
@@ -358,7 +356,7 @@ The controlled operation:
 - updated references affected by the new canonical paths;
 - created no other canonical responsibility directory.
 
-The physical application does not change this specification's Draft status.
+At the time of application, the operation did not change this specification's Draft status; the specification remained Draft pending the required cross-document coherence review and release approval.
 
 `CURRENT_CONTEXT.md` was initially retained at the repository root without becoming canonical normative knowledge.
 

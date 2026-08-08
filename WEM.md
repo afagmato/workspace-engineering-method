@@ -2,7 +2,7 @@
 Document: WEM
 Title: Workspace Engineering Method
 Version: 1.0.0
-Status: Draft
+Status: Released
 Type: Foundation
 ASI: 5
 Language: English

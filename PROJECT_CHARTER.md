@@ -2,7 +2,7 @@
 Document: Project Charter
 Title: Workspace Engineering Method Project Charter
 Version: 1.0.0
-Status: Draft
+Status: Released
 Type: Foundation
 ASI: 5
 Language: English
