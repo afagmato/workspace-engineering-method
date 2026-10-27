@@ -1,7 +1,7 @@
 ---
 Document: WEM
 Title: Workspace Engineering Method
-Version: 1.0.0
+Version: 1.1.0
 Status: Released
 Type: Foundation
 ASI: 5
@@ -23,6 +23,8 @@ It does not prescribe programming languages, frameworks or platforms.
 Instead, it defines how engineering decisions are made.
 
 Projects adopting WEM SHALL follow the specifications that compose the WEM ecosystem.
+
+Version 1.1.0 is Released under Accepted `WEM-ADR-009` following coherence review and explicit Project Owner approval on 2026-10-27.
 
 ---
 
@@ -94,6 +96,22 @@ Knowledge generated during development SHALL become reusable whenever possible.
 
 ---
 
+## Proportional Delivery
+
+WEM delivery is organized through bounded Work Packages and Milestones.
+
+A Work Package is a bounded unit of delivery with an explicit outcome, scope, verification and authority. A Milestone is one or more related Work Packages that produce an evaluable project outcome.
+
+Architecture and milestone boundaries SHALL be decided before affected implementation begins. An approved Authorization Envelope MAY allow implementation, verification, bounded correction and conditional repository actions to proceed without repeated human mediation.
+
+Intermediate human gates SHALL be reserved for decisions required by applicable governance, material changes to the approved milestone, exceeded limits, ambiguous effects or other explicit stop conditions.
+
+Routine, local and readily reversible implementation steps SHALL NOT create separate human gates solely because they occur in different workflow phases.
+
+Detailed Work Package, Milestone, handoff, review and gate requirements are defined by `specifications/AGENT_COLLABORATION.md`. ADR applicability remains governed by `specifications/ADR_SPECIFICATION.md`.
+
+---
+
 ## Modular Specification
 
 WEM is composed of modular specifications with distinct responsibilities.
@@ -107,6 +125,23 @@ The Repository Blueprint governs how specification responsibilities and canonica
 The public repository interface provides non-normative navigation to the currently maintained specifications, decisions and supporting artifacts.
 
 Documents SHALL reference the canonical source responsible for normative knowledge instead of duplicating it.
+
+---
+
+## Version Composition
+
+WEM 1.1.0 is composed of:
+
+| Normative responsibility | Document version |
+| --- | --- |
+| Engineering method | `WEM.md` 1.1.0 |
+| ADR governance | `specifications/ADR_SPECIFICATION.md` 1.1.0 |
+| Human and AI collaboration governance | `specifications/AGENT_COLLABORATION.md` 1.1.0 |
+| Project foundation | `PROJECT_CHARTER.md` 1.0.0 |
+| Engineering Principles | `ENGINEERING_PRINCIPLES.md` 1.0.0 |
+| Repository architecture | `specifications/REPOSITORY_BLUEPRINT.md` 1.0.0 |
+
+Unchanged 1.0.0 components remain normative dependencies of WEM 1.1.0. Their unchanged version SHALL NOT be interpreted as a weaker authority or partial adoption.
 
 ---
 

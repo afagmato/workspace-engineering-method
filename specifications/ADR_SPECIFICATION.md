@@ -1,7 +1,7 @@
 ---
 Document: ADR Specification
 Title: Workspace Engineering Method Architecture Decision Records
-Version: 1.0.0
+Version: 1.1.0
 Status: Released
 Type: Governance
 ASI: 4
@@ -17,6 +17,8 @@ Methodology: WEM
 This specification defines the Architecture Decision Record (ADR) system used by WEM and by projects that adopt it.
 
 It establishes when an ADR is required, what an ADR contains, how its status evolves, who may approve it and how architectural decisions remain traceable over time.
+
+Version 1.1.0 is Released under Accepted `WEM-ADR-009` following coherence review and explicit Project Owner approval on 2026-10-27.
 
 ---
 
@@ -99,15 +101,21 @@ The minimum ADR requirement by ASI level is:
 | ASI-5 | Required |
 | ASI-4 | Required |
 | ASI-3 | Required |
-| ASI-2 | Required |
-| ASI-1 | Proportional |
+| ASI-2 | Proportional |
+| ASI-1 | Not required by default |
 | Unclassified | Not required |
 
-An ASI-1 decision SHOULD use an ADR when it establishes a durable internal constraint, coordinates multiple contributors or preserves a non-obvious engineering trade-off.
+An ASI-2 decision SHALL use an ADR when it changes an interface with external consumers, modifies a compatibility commitment, affects multiple maintained components or requires coordinated migration.
 
-Other ASI-1 decisions MAY use a lighter traceability mechanism appropriate to their scope and cost of change.
+An ASI-2 decision MAY use a bounded task record, issue, change description or Implementation Handoff when the interface remains Draft, has one controlled consumer and is inexpensive to reverse. The selected traceability SHALL preserve the decision, responsible authority and affected boundary.
+
+An ASI-1 decision MAY use an ADR when it establishes a durable internal constraint, coordinates multiple contributors or preserves a non-obvious engineering trade-off. A lighter traceability mechanism SHOULD be preferred when it is sufficient.
 
 Routine, local and readily reversible choices that do not meet the applicable ASI threshold do not require an ADR.
+
+Implementing an Accepted decision does not create a new architectural decision unless implementation reveals a material choice outside the accepted decision.
+
+ASI classification SHALL be based on the expected scope and cost of reversal. Creating a file, activating an approved responsibility, selecting a compatible patch version, configuring a local tool or causing bounded external state SHALL NOT by itself determine an ASI level.
 
 Every ADR SHALL identify an ASI level.
 
@@ -119,7 +127,7 @@ A Rejected or Withdrawn ADR MAY retain a provisional ASI classification when fin
 
 A proposed deviation from a normative WEM requirement SHALL be documented and approved through an ADR when it affects a significant decision or a WEM adoption claim.
 
-The responsible human decision authority MAY require an ADR for any classified decision when durable traceability is necessary.
+The responsible human decision authority MAY require an ADR for any decision when durable traceability is necessary.
 
 An ADR SHALL address one coherent decision responsibility.
 

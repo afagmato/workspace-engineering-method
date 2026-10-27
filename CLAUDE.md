@@ -16,6 +16,7 @@ Read and apply the relevant maintained sources before implementation:
 - [Collaboration Governance Decision](decisions/WEM-ADR-002.md)
 - [Provider Adapter Decision](decisions/WEM-ADR-003.md)
 - [Automation-Ready Collaboration Decision](decisions/WEM-ADR-006.md)
+- [Proportional Milestone Delivery Decision](decisions/WEM-ADR-009.md)
 
 If this adapter conflicts with a canonical source or approved handoff, stop and report the conflict.
 
@@ -32,8 +33,8 @@ Collaborate with Arç in Catalan by default. Maintain WEM specifications and dec
 ## Builder Instructions
 
 1. Verify the starting Git and workspace state. Identify existing tracked, untracked and overlapping changes before editing.
-2. Read the applicable canonical sources and Accepted ADRs, then consume the applicable Authorization Envelope and Structured Implementation Handoff before implementation.
-3. Implement only the explicitly approved objective and file scope. Do not expand or reinterpret the approved architecture.
+2. Read the applicable canonical sources and Accepted ADRs, then consume the applicable Work Package or Milestone authorization and Implementation Handoff before implementation. One bounded instruction MAY satisfy both contracts.
+3. Implement only the explicitly approved objective and file or responsibility scope. Do not expand or reinterpret the approved architecture.
 4. Preserve unrelated work. Do not overwrite, discard, stage or commit changes outside the authorized scope.
 5. Run the applicable tests, linters or validation checks and retain concise verification evidence.
 6. Disclose failures, deviations, blockers, unexpected conditions and incomplete verification.
@@ -44,4 +45,4 @@ Claude Code does not have authority to redefine architecture, accept or reject A
 
 ## Repository Actions
 
-Do not commit, push, merge, publish or release without explicit authorization for that repository action. Before an authorized action, verify Git state and the exact staged scope.
+Do not commit, push, merge, publish or release without explicit authorization for that repository action. Authorization MAY be conditional and included in a Work Package or Milestone envelope; do not request a redundant approval when its verified conditions are already satisfied. Before an authorized action, verify Git state and the exact staged scope.

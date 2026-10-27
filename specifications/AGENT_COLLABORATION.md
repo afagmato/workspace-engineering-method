@@ -1,7 +1,7 @@
 ---
 Document: Agent Collaboration
 Title: Workspace Engineering Method Human and AI Collaboration Governance
-Version: 1.0.0
+Version: 1.1.0
 Status: Released
 Type: Governance
 ASI: 4
@@ -16,7 +16,7 @@ Methodology: WEM
 
 This specification defines the roles, authority boundaries and collaboration controls used when human and AI participants work together on WEM engineering responsibilities.
 
-It establishes explicit handoffs, review workflow, controlled concurrency, conflict prevention, interaction boundaries and completion criteria while preserving final human accountability.
+It establishes Work Packages, Milestones, explicit handoffs, meaningful gates, review workflow, controlled concurrency, conflict prevention, interaction boundaries and completion criteria while preserving final human accountability.
 
 It also defines provider-independent logical contracts that allow authorized collaboration to be automated without turning human authority into a requirement for human message mediation.
 
@@ -30,9 +30,9 @@ The keywords SHALL, SHALL NOT, SHOULD, SHOULD NOT and MAY are to be interpreted 
 
 ## Status and Authority
 
-This specification is Released as part of WEM 1.0.0 following the required cross-document coherence review and explicit Project Owner approval recorded in `decisions/WEM-ADR-008.md`.
+Version 1.1.0 is Released under Accepted `decisions/WEM-ADR-009.md` following coherence review and explicit Project Owner approval on 2026-10-27.
 
-`decisions/WEM-ADR-002.md` and `decisions/WEM-ADR-006.md` are Accepted, and the role-based, automation-ready collaboration model defined here governs WEM collaboration.
+`decisions/WEM-ADR-002.md`, `decisions/WEM-ADR-006.md` and `decisions/WEM-ADR-009.md` are Accepted. They govern the role-based, automation-ready and proportional milestone collaboration model defined here.
 
 Release of this specification does not create additional provider-specific entry files, executable orchestration products or transferred decision authority.
 
@@ -44,6 +44,8 @@ This specification governs:
 
 - generic collaboration roles;
 - authority boundaries between those roles;
+- Work Packages and Milestones;
+- meaningful and conditional human gates;
 - explicit transfer of work and context;
 - proposal, implementation, review and acceptance workflow;
 - controlled concurrency and workspace ownership;
@@ -65,7 +67,7 @@ This specification does not define:
 - ASI levels or Architectural Pause requirements;
 - ADR structure or lifecycle;
 - repository architecture;
-- Sprint planning or milestone sequence;
+- Sprint planning or project-specific milestone sequence;
 - provider-specific prompts or instructions;
 - native communication capabilities of a particular platform;
 - provider-specific repository entry files;
@@ -173,7 +175,7 @@ Within the collaboration workflow, this role SHALL:
 - review alternatives for significant decisions;
 - approve, reject or modify ASI-4 and ASI-5 proposals;
 - resolve authority or collaborator conflicts;
-- accept or reject completed work;
+- accept or reject completed work when human acceptance is required;
 - authorize repository actions when required.
 
 This role MAY pause, redirect or cancel collaborative work.
@@ -231,6 +233,43 @@ Automation SHALL NOT transfer authority, expand approved scope or bypass an Arch
 
 ---
 
+## Work Packages and Milestones
+
+A Work Package is a bounded unit of delivery with an explicit outcome, scope, authority, verification and completion condition.
+
+A single bounded task MAY constitute one Work Package. Work Package and Milestone boundaries are logical governance boundaries and SHALL NOT by themselves require persistent documents, directories or tracking-system objects.
+
+A Milestone is one or more related Work Packages that produce an evaluable project outcome. A Milestone SHALL identify its architectural boundaries, acceptance criteria, required verification and decisions reserved to human authority.
+
+An initial human authorization MAY cover adjacent workflow phases for an entire Work Package or Milestone. It MAY authorize implementation, deterministic verification, bounded correction and conditional repository actions when their boundaries and prerequisites are explicit.
+
+Planning, implementation, verification, commit and push do not require separate human decisions merely because they are distinct mechanical operations.
+
+Work Package boundaries SHOULD use approved responsibilities or path subtrees when exact file enumeration would add fragility without reducing risk. Exact paths SHALL be used when the effect or authority genuinely applies to individual files.
+
+A Milestone SHALL remain small enough that its complete result can receive meaningful review. Work SHALL stop when the milestone outcome, architecture, authority or applicable limits would change materially.
+
+---
+
+## Meaningful Gates
+
+A human gate SHALL correspond to a decision reserved by applicable governance or the active Authorization Envelope.
+
+An intermediate human gate is required when:
+
+- an ASI-4 or ASI-5 decision is required;
+- the approved architecture or Milestone outcome would change materially;
+- scope, time, cost or external effects would exceed the active envelope;
+- a destructive, publication, release, licensing, credential or sensitive-data decision is not already authorized;
+- mandatory verification fails or an external effect becomes ambiguous;
+- the active envelope explicitly reserves the decision to human authority.
+
+Routine corrections, formatting, focused tests, internal refactoring and other local reversible actions within an approved boundary SHALL NOT create a human gate solely because they are distinct implementation steps.
+
+Human acceptance remains required when specified by project governance, the applicable ASI level, the Authorization Envelope or a release responsibility. WEM SHALL NOT manufacture an additional gate when no decision remains reserved to human authority.
+
+---
+
 ## Authorization Envelope
 
 Every automated collaboration execution SHALL operate within an explicit Authorization Envelope.
@@ -238,6 +277,7 @@ Every automated collaboration execution SHALL operate within an explicit Authori
 The Authorization Envelope SHALL identify, with detail proportional to the execution:
 
 - objective;
+- Work Package or Milestone outcome when applicable;
 - approved scope;
 - applicable authority;
 - permitted participants or tools;
@@ -247,9 +287,13 @@ The Authorization Envelope SHALL identify, with detail proportional to the execu
 - human-reserved decisions;
 - stopping and escalation conditions.
 
+The envelope MAY authorize creation of files within an approved responsibility or path subtree without enumerating each future filename. Such authorization SHALL remain bounded by the approved outcome, architecture and repository responsibility.
+
 Applicable limits SHALL include attempt or iteration limits and SHOULD include time or cost limits when those limits are relevant to the execution.
 
 Repository actions such as commit, push, merge, publication or release SHALL be permitted only when the responsible authority explicitly includes the applicable action in the Authorization Envelope or provides a separate authorization.
+
+Commit and push MAY be authorized conditionally in the same envelope. A separate approval SHALL NOT be required when the active envelope already identifies the exact repository action, destination, prerequisites and applicable human-reserved gate.
 
 Tool access, repository permissions and successful execution SHALL NOT expand the Authorization Envelope.
 
@@ -303,6 +347,8 @@ A single bounded task instruction MAY satisfy the Implementation Handoff require
 
 When the same participant performs multiple authorized functions, logical collaboration contracts MAY be combined or represented within the execution context instead of requiring separate persistent artifacts, provided that scope, authority, acceptance criteria, verification and escalation boundaries remain explicit and verifiable.
 
+For an approved Work Package or Milestone, one bounded instruction MAY combine the Authorization Envelope and Implementation Handoff when every required boundary remains explicit. WEM SHALL NOT require duplicate artifacts solely to represent adjacent workflow phases.
+
 The receiving function SHALL inspect the actual repository state before relying on the Implementation Handoff.
 
 An Implementation Handoff SHALL NOT silently transfer approval authority.
@@ -314,6 +360,8 @@ An Implementation Handoff SHALL NOT silently transfer approval authority.
 The workflow SHALL be applied with governance proportional to the scope and cost of change.
 
 For routine, local and readily reversible work, adjacent phases MAY be combined and handoffs MAY be concise, provided that authority, scope, verification and completion remain explicit.
+
+An approved Work Package or Milestone MAY progress through all adjacent phases authorized by its envelope without repeated human mediation. A later phase SHALL pause only when it reaches a reserved decision, stop condition or invalidated prerequisite.
 
 Phases required by an Architectural Pause, ADR or human approval SHALL NOT be omitted when applicable.
 
@@ -336,6 +384,8 @@ The Architect and Reviewer presents the recommended approach, relevant alternati
 The Project Owner and Final Authority approves, rejects or modifies the proposal when human approval is required.
 
 Approval SHALL be explicit and SHALL NOT be inferred solely from continued conversation or tool access.
+
+One approval MAY authorize the remaining phases of a bounded Work Package or Milestone when no later decision is reserved.
 
 ### Phase 5 — Implementation Handoff
 
@@ -366,6 +416,8 @@ Human acceptance SHALL NOT be inferred from continued conversation, tool access 
 ### Phase 10 — Repository Action
 
 After the required acceptance and repository authorization, the responsible participant verifies Git state, reviews the final staged diff and performs only the repository actions permitted by the Authorization Envelope or a separate explicit authorization.
+
+When commit or push is already conditionally authorized by the active envelope, satisfying and verifying those conditions completes the repository-action gate without another approval message.
 
 ---
 
@@ -429,6 +481,8 @@ Builder and Reviewer functions MAY repeat implementation, verification, review a
 - no stopping or escalation condition occurs.
 
 The maximum number of correction cycles SHALL be defined by the Authorization Envelope or explicitly authorized operational configuration.
+
+An envelope SHOULD permit bounded deterministic correction cycles unless a specific risk justifies a zero-cycle limit. A correction that remains within scope, architecture, authority and limits SHALL NOT require a new human decision.
 
 Time and cost limits SHOULD be defined when they are relevant to the execution.
 
@@ -584,9 +638,25 @@ Completion of implementation does not by itself authorize commit, publication or
 
 ---
 
+## Verification Profiles
+
+Verification SHALL be proportional to the gate being evaluated:
+
+- Work Package verification focuses on the changed responsibility and its immediate contracts;
+- Milestone verification covers integration, milestone acceptance criteria and relevant regression risk;
+- release verification covers publication, reproducibility, compatibility, security and other release properties.
+
+Release-level verification SHALL NOT be required for every Work Package unless that package can invalidate the corresponding release property.
+
+Unavailable mandatory verification remains blocking at the gate where that verification is required.
+
+---
+
 ## Evolution
 
 Changes to generic roles, authority boundaries, Authorization Envelopes, logical collaboration contracts, review responsibility, controlled concurrency, correction-loop governance or completion governance affect the collaboration architecture and SHALL be classified as ASI-4 or higher according to their actual scope and cost of change.
+
+Work Package, Milestone and meaningful-gate governance were introduced by Accepted `WEM-ADR-009` for WEM 1.1.0.
 
 Provider-specific operational instructions MAY follow lower governance when they do not change normative collaboration meaning or human authority.
 

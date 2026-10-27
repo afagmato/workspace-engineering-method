@@ -4,7 +4,7 @@
 
 Workspace Engineering Method (WEM) is a technology-independent engineering method for designing, building and evolving sustainable software systems.
 
-**WEM 1.0.0 — Released**
+**WEM 1.1.0 — Released**
 
 ## What is WEM?
 
@@ -16,10 +16,20 @@ The canonical definition of the method is maintained in [WEM.md](WEM.md).
 
 | | |
 | --- | --- |
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Released |
 
-WEM 1.0.0 is the first coordinated Released version of the specification ecosystem. It completed the required cross-document coherence review and received explicit Project Owner approval.
+WEM 1.1.0 introduces proportional Work Package and Milestone delivery under Accepted `WEM-ADR-009`. It completed coherence review and received explicit Project Owner release approval on 2026-10-27. The immutable `v1.0.0` tag remains available as the preceding release.
+
+WEM 1.1.0 contains these updated normative components:
+
+| Component | Candidate version |
+| --- | --- |
+| `WEM.md` | 1.1.0 — Released |
+| `specifications/ADR_SPECIFICATION.md` | 1.1.0 — Released |
+| `specifications/AGENT_COLLABORATION.md` | 1.1.0 — Released |
+
+The Project Charter, Engineering Principles and Repository Blueprint remain unchanged at Version 1.0.0 and are normative dependencies of the candidate.
 
 ## Core Idea
 
@@ -44,12 +54,12 @@ This is an explanatory summary. See [WEM.md](WEM.md) for the maintained engineer
 
 ## Adoption
 
-Projects adopt WEM as a methodology, not as a technical dependency. WEM 1.0.0 Released provides a stable version reference for adoption while each adopting project retains responsibility for its own architecture, implementation, risks and outcomes.
+Projects adopt WEM as a methodology, not as a technical dependency. WEM 1.1.0 Released provides the current stable version reference for adoption while each adopting project retains responsibility for its own architecture, implementation, risks and outcomes.
 
 A project adopting this release can identify it as:
 
 ```text
-Methodology: WEM 1.0.0 — Released
+Methodology: WEM 1.1.0 — Released
 ```
 
 See [PROJECT_CHARTER.md](PROJECT_CHARTER.md) and [WEM.md](WEM.md) for the maintained adoption responsibilities and method definition.
@@ -62,7 +72,7 @@ The authoritative boundaries are defined by [ENGINEERING_PRINCIPLES.md](ENGINEER
 
 ## Human and AI Collaboration
 
-WEM supports role-based collaboration between human and AI participants while preserving human accountability. The maintained roles, authority boundaries and collaboration workflow are defined in [specifications/AGENT_COLLABORATION.md](specifications/AGENT_COLLABORATION.md).
+WEM supports role-based collaboration between human and AI participants while preserving human accountability. WEM 1.1.0 organizes delivery through bounded Work Packages and Milestones so that human gates correspond to material decisions rather than mechanical phase boundaries. The maintained roles, authority boundaries and collaboration workflow are defined in [specifications/AGENT_COLLABORATION.md](specifications/AGENT_COLLABORATION.md).
 
 ## License
 
