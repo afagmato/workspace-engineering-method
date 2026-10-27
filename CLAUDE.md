@@ -12,11 +12,13 @@ Read and apply the relevant maintained sources before implementation:
 - [ADR Specification](specifications/ADR_SPECIFICATION.md)
 - [Repository Blueprint](specifications/REPOSITORY_BLUEPRINT.md)
 - [Human and AI Collaboration Governance](specifications/AGENT_COLLABORATION.md)
+- [Project Initiation](specifications/PROJECT_INITIATION.md)
 - [Repository Architecture Decision](decisions/WEM-ADR-001.md)
 - [Collaboration Governance Decision](decisions/WEM-ADR-002.md)
 - [Provider Adapter Decision](decisions/WEM-ADR-003.md)
 - [Automation-Ready Collaboration Decision](decisions/WEM-ADR-006.md)
 - [Proportional Milestone Delivery Decision](decisions/WEM-ADR-009.md)
+- [Automated Project Initiation Decision](decisions/WEM-ADR-010.md)
 
 If this adapter conflicts with a canonical source or approved handoff, stop and report the conflict.
 

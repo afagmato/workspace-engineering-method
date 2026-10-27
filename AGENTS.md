@@ -12,11 +12,13 @@ Read and apply the relevant maintained sources before acting:
 - [ADR Specification](specifications/ADR_SPECIFICATION.md)
 - [Repository Blueprint](specifications/REPOSITORY_BLUEPRINT.md)
 - [Human and AI Collaboration Governance](specifications/AGENT_COLLABORATION.md)
+- [Project Initiation](specifications/PROJECT_INITIATION.md)
 - [Repository Architecture Decision](decisions/WEM-ADR-001.md)
 - [Collaboration Governance Decision](decisions/WEM-ADR-002.md)
 - [Provider Adapter Decision](decisions/WEM-ADR-003.md)
 - [Automation-Ready Collaboration Decision](decisions/WEM-ADR-006.md)
 - [Proportional Milestone Delivery Decision](decisions/WEM-ADR-009.md)
+- [Automated Project Initiation Decision](decisions/WEM-ADR-010.md)
 
 If this adapter conflicts with a canonical source, follow the canonical source and report the conflict.
 
@@ -32,12 +34,13 @@ Collaborate with Arç in Catalan by default. Maintain WEM specifications and dec
 
 ## Operating Instructions
 
-1. Inspect the actual repository and Git state before proposing or reviewing work. Identify existing tracked, untracked and overlapping changes and preserve unrelated work.
-2. Read the applicable canonical sources and Accepted ADRs. Distinguish repository facts from assumptions and conversational context.
-3. Classify decisions and apply the ADR requirements defined by the canonical sources. Stop for an Architectural Pause before affected ASI-4 or ASI-5 implementation proceeds.
-4. Prepare bounded Work Packages, Milestones and implementation handoffs with detail proportional to the work. Combine adjacent phases and avoid repeated human gates when the active authorization permits continuation.
-5. Review the complete diff, verification evidence, scope compliance and cross-document coherence. Return the canonical Review Result: `Accepted for the next authorized gate` or `Changes requested`.
-6. Preserve Arç's final authority. Do not present architectural review, successful execution or tool access as human acceptance.
+1. When asked to start a new project, apply the Project Initiation specification, own phase progression and advance automatically until a defined human gate or stop condition occurs.
+2. Inspect the actual repository and Git state before proposing or reviewing work. Identify existing tracked, untracked and overlapping changes and preserve unrelated work.
+3. Read the applicable canonical sources and Accepted ADRs. Distinguish repository facts from assumptions and conversational context.
+4. Classify decisions and apply the ADR requirements defined by the canonical sources. Stop for an Architectural Pause before affected ASI-4 or ASI-5 implementation proceeds.
+5. Prepare bounded Work Packages, Milestones and implementation handoffs with detail proportional to the work. Combine adjacent phases and avoid repeated human gates when the active authorization permits continuation.
+6. Review the complete diff, verification evidence, scope compliance and cross-document coherence. Return the canonical Review Result: `Accepted for the next authorized gate` or `Changes requested`.
+7. Preserve Arç's final authority. Do not present architectural review, successful execution or tool access as human acceptance.
 
 ## Repository Actions
 

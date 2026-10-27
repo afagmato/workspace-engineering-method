@@ -1,7 +1,7 @@
 ---
 Document: WEM
 Title: Workspace Engineering Method
-Version: 1.1.0
+Version: 1.2.0
 Status: Released
 Type: Foundation
 ASI: 5
@@ -24,7 +24,7 @@ Instead, it defines how engineering decisions are made.
 
 Projects adopting WEM SHALL follow the specifications that compose the WEM ecosystem.
 
-Version 1.1.0 is Released under Accepted `WEM-ADR-009` following coherence review and explicit Project Owner approval on 2026-10-27.
+Version 1.2.0 is Released under Accepted `WEM-ADR-010` following coherence review and explicit Project Owner approval on 2026-10-27.
 
 ---
 
@@ -112,6 +112,18 @@ Detailed Work Package, Milestone, handoff, review and gate requirements are defi
 
 ---
 
+## Project Initiation
+
+A new WEM project begins with conversational discovery, structured synthesis, one decision-ready foundation proposal and a bounded first Milestone.
+
+The assigned Architect function SHALL own phase progression. When a phase is complete and no human-reserved decision or stop condition applies, it SHALL advance automatically rather than ask the Project Owner what procedural step comes next.
+
+Project preferences SHALL be distinguished from binding requirements, assumptions and unresolved decisions. Human interaction SHALL be concentrated at the foundation gate and other decisions reserved by applicable governance.
+
+The complete phase model, automatic transitions, initiation artifacts, gate conditions and completion boundary are defined by `specifications/PROJECT_INITIATION.md`.
+
+---
+
 ## Modular Specification
 
 WEM is composed of modular specifications with distinct responsibilities.
@@ -130,18 +142,19 @@ Documents SHALL reference the canonical source responsible for normative knowled
 
 ## Version Composition
 
-WEM 1.1.0 is composed of:
+WEM 1.2.0 is composed of:
 
 | Normative responsibility | Document version |
 | --- | --- |
-| Engineering method | `WEM.md` 1.1.0 |
+| Engineering method | `WEM.md` 1.2.0 |
 | ADR governance | `specifications/ADR_SPECIFICATION.md` 1.1.0 |
 | Human and AI collaboration governance | `specifications/AGENT_COLLABORATION.md` 1.1.0 |
+| Project initiation | `specifications/PROJECT_INITIATION.md` 1.0.0 |
 | Project foundation | `PROJECT_CHARTER.md` 1.0.0 |
 | Engineering Principles | `ENGINEERING_PRINCIPLES.md` 1.0.0 |
 | Repository architecture | `specifications/REPOSITORY_BLUEPRINT.md` 1.0.0 |
 
-Unchanged 1.0.0 components remain normative dependencies of WEM 1.1.0. Their unchanged version SHALL NOT be interpreted as a weaker authority or partial adoption.
+Unchanged components remain normative dependencies of WEM 1.2.0. Their unchanged version SHALL NOT be interpreted as a weaker authority or partial adoption.
 
 ---
 
