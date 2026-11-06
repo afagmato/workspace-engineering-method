@@ -210,7 +210,7 @@ This maximizes speed but loses authority boundaries, traceability and fail-close
 
 ### Alternative C — Adopt proportional milestone delivery while preserving high-impact gates
 
-This keeps WEM's human-accountability and architectural-safety model while reducing low-value interruption. This is the proposed alternative.
+This keeps WEM's human-accountability and architectural-safety model while reducing low-value interruption. This is the selected alternative.
 
 ## ASI Level
 

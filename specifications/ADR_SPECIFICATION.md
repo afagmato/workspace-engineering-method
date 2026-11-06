@@ -1,8 +1,8 @@
 ---
 Document: ADR Specification
 Title: Workspace Engineering Method Architecture Decision Records
-Version: 1.1.0
-Status: Released
+Version: 1.2.0
+Status: Draft
 Type: Governance
 ASI: 4
 Language: English
@@ -18,7 +18,7 @@ This specification defines the Architecture Decision Record (ADR) system used by
 
 It establishes when an ADR is required, what an ADR contains, how its status evolves, who may approve it and how architectural decisions remain traceable over time.
 
-Version 1.1.0 is Released under Accepted `WEM-ADR-009` following coherence review and explicit Project Owner approval on 2026-10-27.
+Version 1.2.0 is Draft under Accepted `WEM-ADR-011`. Version 1.1.0 remains Released until this Draft completes coherence review and receives explicit Project Owner release approval.
 
 ---
 
@@ -116,6 +116,18 @@ Routine, local and readily reversible choices that do not meet the applicable AS
 Implementing an Accepted decision does not create a new architectural decision unless implementation reveals a material choice outside the accepted decision.
 
 ASI classification SHALL be based on the expected scope and cost of reversal. Creating a file, activating an approved responsibility, selecting a compatible patch version, configuring a local tool or causing bounded external state SHALL NOT by itself determine an ASI level.
+
+The canonical levels SHALL be interpreted across project types as follows:
+
+- ASI-5 applies to project foundation, final authority or method identity;
+- ASI-4 applies to durable system structure, responsibility boundaries or human-governance architecture;
+- ASI-3 applies to cross-component architecture, workflow or coordinated technical policy;
+- ASI-2 applies to an externally consumed interface, contract or compatibility boundary;
+- ASI-1 applies to a local internal implementation constraint.
+
+Public visibility is not required for ASI-2. A contract with a controlled external consumer may still be externally consumed, while coordinated migration or structural impact may require a higher level.
+
+When a decision reasonably spans two levels, it SHOULD use the higher level unless the ADR explains why the lower level adequately represents the affected boundaries and reversal cost.
 
 Every ADR SHALL identify an ASI level.
 

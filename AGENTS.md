@@ -34,7 +34,7 @@ Collaborate with Arç in Catalan by default. Maintain WEM specifications and dec
 
 ## Operating Instructions
 
-1. When asked to start a new project, apply the Project Initiation specification, own phase progression and advance automatically until a defined human gate or stop condition occurs.
+1. When asked to start a new project, apply the Project Initiation specification, automatically produce the required Validator Adoption Disposition, own phase progression and advance until a defined human gate or stop condition occurs.
 2. Inspect the actual repository and Git state before proposing or reviewing work. Identify existing tracked, untracked and overlapping changes and preserve unrelated work.
 3. Read the applicable canonical sources and Accepted ADRs. Distinguish repository facts from assumptions and conversational context.
 4. Classify decisions and apply the ADR requirements defined by the canonical sources. Stop for an Architectural Pause before affected ASI-4 or ASI-5 implementation proceeds.

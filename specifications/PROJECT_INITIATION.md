@@ -1,8 +1,8 @@
 ---
 Document: Project Initiation Specification
 Title: Workspace Engineering Method Project Initiation
-Version: 1.0.0
-Status: Released
+Version: 1.1.0
+Status: Draft
 Type: Governance
 ASI: 3
 Language: English
@@ -20,9 +20,9 @@ It makes phase progression the responsibility of the assigned Architect function
 
 ## Status and Authority
 
-Version 1.0.0 is Released as part of WEM 1.2.0 under Accepted `WEM-ADR-010`, following coherence review and explicit Project Owner approval on 2026-10-27.
+Version 1.1.0 is Draft under Accepted `WEM-ADR-013`. It adds mandatory automated structural-validator adoption evaluation without changing the foundation gate or final human authority.
 
-Release establishes the canonical Project Initiation workflow. It does not initialize an adopting project or transfer any Project Owner authority by itself.
+Version 1.0.0 remains Released as part of WEM 1.2.0. Publication of this Draft does not initialize an adopting project, activate a validator or transfer any Project Owner authority by itself.
 
 ## Normative Language
 
@@ -37,6 +37,7 @@ This specification governs:
 - classification of preferences, constraints, assumptions and uncertainties;
 - preparation and approval of the project foundation;
 - selection of the first maintained artifact;
+- structural-validator adoption evaluation;
 - definition and authorization of the first Milestone;
 - automatic phase progression;
 - meaningful human gates;
@@ -72,6 +73,12 @@ A Preference Profile is the transient, structured interpretation of the Project 
 A Decision Skeleton identifies the decisions required now, their provisional ASI, responsible authority, recommended direction and decisions explicitly deferred.
 
 It is a planning view and SHALL NOT make a decision governing before its required authority acts.
+
+### Validator Adoption Disposition
+
+A Validator Adoption Disposition is the mandatory decision-ready result of evaluating structural validation during an Initiation Run.
+
+Its value is `Adopt`, `Defer` or `Not Applicable`. It records the recommended implementation and profile when applicable, provisional classification, responsible authority, effects, limitations and reassessment trigger.
 
 ### Foundation Package
 
@@ -116,6 +123,36 @@ Every preference that affects the Foundation Package or first Milestone SHALL be
 - `assumed`: inferred provisionally and disclosed for review.
 
 Silence, tool availability, an existing local installation or a provider default SHALL NOT convert a preference into a requirement or authority.
+
+### Validator-adoption evaluation
+
+Every Initiation Run SHALL automatically evaluate structural-validator adoption and include one Validator Adoption Disposition in the Decision Skeleton and Foundation Package.
+
+The Architect SHALL recommend `Adopt` when:
+
+- the project maintains or will maintain WEM-governed artifacts;
+- a validator has a compatible profile for the declared WEM version and is approved for the intended use;
+- execution fits project security, environment and repository constraints;
+- activation can be bounded within known authority without inventing a material preference.
+
+The Architect SHALL recommend `Defer` when validation is relevant but compatibility, authority, execution capability or timing is unresolved. The disposition SHALL identify the condition and earliest phase or Milestone for reassessment.
+
+`Not Applicable` SHALL require an explicit responsibility-based rationale. Tool absence, inconvenience, silence or lack of prior configuration SHALL NOT make validation not applicable by themselves.
+
+The disposition SHALL identify:
+
+- supporting evidence;
+- selected implementation and exact compatibility profile when adoption is recommended;
+- provisional ASI and responsible authority;
+- configuration, execution, repository and CI effects;
+- applicable verification or the reason it cannot yet run;
+- limitations, deferred coverage and reassessment trigger.
+
+Evaluation and recommendation are automatic. Installation, maintained configuration, CI integration, external access, credentials and repository actions require the authority applicable to their actual effects.
+
+WEM defines this decision responsibility but SHALL NOT make a validator product part of the normative method. WEM Validator is the current reference product; a compatible alternative MAY be selected when its declared coverage and authority boundaries are explicit.
+
+Successful validation is structural evidence only. It SHALL NOT constitute certification, architectural review, Project Owner acceptance, publication approval or release authority.
 
 ### Minimal persistence
 
@@ -184,7 +221,9 @@ Discovery SHALL obtain, with depth proportional to the project:
 - legal, operational, cost, time and platform constraints;
 - Project Owner preferences and reserved decisions;
 - existing systems, data or repositories affected;
-- the desired level of automation and autonomy.
+- the desired level of automation and autonomy;
+- existing structural validation, CI and tool-execution constraints;
+- availability and approved-use status of a validator profile compatible with the declared WEM version.
 
 The Architect SHOULD ask one consolidated set of questions only when missing answers can materially change the Foundation Package or first Milestone.
 
@@ -206,6 +245,7 @@ The Architect SHALL produce a transient synthesis that separates:
 - decisions required now;
 - decisions safely deferred;
 - apparent conflicts;
+- the Validator Adoption Disposition;
 - the smallest useful first Milestone.
 
 The Architect SHALL classify material decisions provisionally under the ASI and ADR rules.
@@ -232,6 +272,7 @@ The Foundation Package SHALL identify:
 - initial operational role assignments;
 - binding constraints and classified preferences;
 - Decision Skeleton with required and deferred decisions;
+- Validator Adoption Disposition with exact activation or reassessment scope;
 - recommended first maintained artifact;
 - recommended first Milestone;
 - acceptance criteria and major risks;
@@ -242,6 +283,8 @@ The Foundation Package SHALL identify:
 The Project Owner SHALL accept, reject or modify the Foundation Package.
 
 Acceptance authorizes only the foundation and actions explicitly included in the package. It SHALL NOT silently authorize product implementation, external publication or a later human-reserved decision.
+
+PI-G1 accepts, rejects or modifies the Validator Adoption Disposition as part of the Foundation Package. It SHALL NOT create a separate validator-specific human gate when the disposition is decision-ready within PI-G1.
 
 After acceptance, progression continues automatically to PI-4. Rejection ends or redirects the Initiation Run. Requested changes return to the earliest affected phase without repeating unaffected work.
 
@@ -259,6 +302,8 @@ The operation SHALL:
 - preserve exact accepted mission, scope and authority;
 - run applicable structural and coherence verification;
 - perform only repository actions already authorized.
+
+When an `Adopt` disposition includes authorized foundation materialization, PI-4 SHALL create only the accepted validator configuration and execution entry points. Otherwise, activation SHALL remain an explicit first-Milestone responsibility. Local installation or successful trial execution SHALL NOT expand that scope.
 
 ### Completion and transition
 
@@ -280,6 +325,8 @@ It SHALL:
 - define the first Milestone as an evaluable outcome rather than a list of disconnected artifacts;
 - select focused, Milestone and release verification profiles;
 - define scope, limits, correction cycles, repository actions and stop conditions.
+
+PI-5 SHALL incorporate an accepted `Adopt` disposition into the first Milestone when activation was not completed in PI-4. It SHALL preserve the reassessment trigger for `Defer` and the rationale for `Not Applicable`.
 
 ### Conditional gates
 
@@ -355,7 +402,10 @@ The Reviewer SHALL evaluate:
 - focused and Milestone verification;
 - repository and workspace state;
 - architecture and governance coherence;
+- conformance of validator activation or deferral with the accepted Validator Adoption Disposition;
 - failures, deviations, limitations and unintended effects.
+
+When validation was adopted and is applicable to the reviewed scope, its result SHALL form part of verification evidence. A failed or unavailable required validation SHALL follow the active gate and stop conditions rather than be silently omitted.
 
 The Review Result SHALL be `Accepted for the next authorized gate` or `Changes requested`.
 
@@ -378,6 +428,7 @@ The Architect SHALL close initiation by presenting:
 - the Initialization Baseline;
 - achieved and deferred outcomes;
 - unresolved non-blocking risks;
+- current Validator Adoption Disposition, active profile and deferred limitations;
 - the recommended next Milestone;
 - any decision genuinely required before that Milestone.
 
@@ -436,13 +487,19 @@ Conformance verification SHOULD cover at least:
 7. an ASI-4 decision stops at the correct gate;
 8. a preauthorized commit proceeds after verification without redundant approval;
 9. interruption resumes without repeating a human decision or external effect;
-10. PI-9 proposes or begins the next Milestone without asking what procedural step comes next.
+10. PI-9 proposes or begins the next Milestone without asking what procedural step comes next;
+11. a compatible new project receives an `Adopt` recommendation inside the PI-G1 package without a separate tooling question;
+12. unavailable compatibility produces `Defer` with a reassessment trigger rather than silent omission;
+13. `Not Applicable` requires a responsibility-based rationale;
+14. accepting `Adopt` does not infer installation, CI or repository authority beyond the Foundation Package.
 
 ## Adoption
 
 A project adopting this specification MAY map its existing discovery, inception or project-setup process to the phases defined here when entry conditions, results, transitions and gates remain explicit.
 
 Projects MAY rename phases in their user interface. Automation SHALL preserve the normative responsibilities and authority boundaries even when phase names are hidden from the Project Owner.
+
+Existing adopting projects are not retroactively required to repeat Project Initiation. They SHOULD produce the Validator Adoption Disposition when they next revise their foundation, validation policy or release workflow.
 
 ## Evolution
 

@@ -1,8 +1,8 @@
 ---
 Document: Agent Collaboration
 Title: Workspace Engineering Method Human and AI Collaboration Governance
-Version: 1.1.0
-Status: Released
+Version: 1.2.0
+Status: Draft
 Type: Governance
 ASI: 4
 Language: English
@@ -30,7 +30,7 @@ The keywords SHALL, SHALL NOT, SHOULD, SHOULD NOT and MAY are to be interpreted 
 
 ## Status and Authority
 
-Version 1.1.0 is Released under Accepted `decisions/WEM-ADR-009.md` following coherence review and explicit Project Owner approval on 2026-10-27.
+Version 1.2.0 is Draft under Accepted `decisions/WEM-ADR-012.md`. Version 1.1.0 remains Released until this Draft completes coherence review and receives explicit Project Owner release approval.
 
 `decisions/WEM-ADR-002.md`, `decisions/WEM-ADR-006.md` and `decisions/WEM-ADR-009.md` are Accepted. They govern the role-based, automation-ready and proportional milestone collaboration model defined here.
 
@@ -468,6 +468,10 @@ Routine execution messages, intermediate contracts and verification details MAY 
 
 When persistent traceability is required, the responsible maintained artifact or recoverable location SHALL be identified explicitly.
 
+For a WEM specification release, durable assurance evidence SHALL identify the release candidate and base, exact changed scope, component version and status matrix, performed verification, unavailable or failed checks, reviewer role, review-independence disposition, findings, canonical Review Result, Project Owner release decision and final publication references.
+
+The evidence MAY be maintained in the governing release ADR, a pull request or another recoverable location identified by that ADR. A separate document SHALL NOT be required when an existing maintained record contains the evidence coherently.
+
 ---
 
 ## Bounded Correction Loop
@@ -504,6 +508,12 @@ Review SHALL evaluate correctness, approved scope, applicable governance, verifi
 Successful execution SHALL NOT by itself establish architectural correctness or task acceptance.
 
 When the Architect and Reviewer also implements a change, another authorized reviewer or the Project Owner and Final Authority SHOULD review significant work before acceptance.
+
+For an ASI-4 or ASI-5 WEM specification release, a participant that authored or implemented a material change SHALL NOT be the only technical reviewer unless the Project Owner records an explicit exception with rationale and compensating review.
+
+The Project Owner MAY provide the additional technical review when explicitly acting in that capacity. Final human release authority remains distinct from the technical Review Result.
+
+WEM SHALL NOT impose a minimum elapsed-time delay as a substitute for review evidence. Rapid dependent releases SHOULD receive additional compatibility and inherited-assumption review.
 
 Blocking findings SHALL be resolved or explicitly accepted by the responsible human authority before completion.
 

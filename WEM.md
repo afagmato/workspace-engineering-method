@@ -1,8 +1,8 @@
 ---
 Document: WEM
 Title: Workspace Engineering Method
-Version: 1.2.0
-Status: Released
+Version: 1.3.0
+Status: Draft
 Type: Foundation
 ASI: 5
 Language: English
@@ -24,7 +24,7 @@ Instead, it defines how engineering decisions are made.
 
 Projects adopting WEM SHALL follow the specifications that compose the WEM ecosystem.
 
-Version 1.2.0 is Released under Accepted `WEM-ADR-010` following coherence review and explicit Project Owner approval on 2026-10-27.
+Version 1.3.0 is Draft under Accepted `WEM-ADR-011`, `WEM-ADR-012` and `WEM-ADR-013`. WEM 1.2.0 remains the latest Released version until this Draft completes coherence review and receives explicit Project Owner release approval.
 
 ---
 
@@ -92,7 +92,13 @@ Evolution
 
 Knowledge
 
+↺
+
+Thinking
+
 Knowledge generated during development SHALL become reusable whenever possible.
+
+Preserved knowledge informs subsequent thinking, allowing later cycles to begin from maintained experience rather than incomplete memory.
 
 ---
 
@@ -120,6 +126,8 @@ The assigned Architect function SHALL own phase progression. When a phase is com
 
 Project preferences SHALL be distinguished from binding requirements, assumptions and unresolved decisions. Human interaction SHALL be concentrated at the foundation gate and other decisions reserved by applicable governance.
 
+Every Initiation Run SHALL automatically evaluate structural-validator adoption and include an `Adopt`, `Defer` or `Not Applicable` disposition in the decision-ready Foundation Package. Evaluation SHALL NOT silently authorize tool activation, repository effects or certification claims.
+
 The complete phase model, automatic transitions, initiation artifacts, gate conditions and completion boundary are defined by `specifications/PROJECT_INITIATION.md`.
 
 ---
@@ -142,19 +150,19 @@ Documents SHALL reference the canonical source responsible for normative knowled
 
 ## Version Composition
 
-WEM 1.2.0 is composed of:
+The WEM 1.3.0 Draft is composed of:
 
 | Normative responsibility | Document version |
 | --- | --- |
-| Engineering method | `WEM.md` 1.2.0 |
-| ADR governance | `specifications/ADR_SPECIFICATION.md` 1.1.0 |
-| Human and AI collaboration governance | `specifications/AGENT_COLLABORATION.md` 1.1.0 |
-| Project initiation | `specifications/PROJECT_INITIATION.md` 1.0.0 |
-| Project foundation | `PROJECT_CHARTER.md` 1.0.0 |
+| Engineering method | `WEM.md` 1.3.0 Draft |
+| ADR governance | `specifications/ADR_SPECIFICATION.md` 1.2.0 Draft |
+| Human and AI collaboration governance | `specifications/AGENT_COLLABORATION.md` 1.2.0 Draft |
+| Project initiation | `specifications/PROJECT_INITIATION.md` 1.1.0 Draft |
+| Project foundation | `PROJECT_CHARTER.md` 1.1.0 Draft |
 | Engineering Principles | `ENGINEERING_PRINCIPLES.md` 1.0.0 |
 | Repository architecture | `specifications/REPOSITORY_BLUEPRINT.md` 1.0.0 |
 
-Unchanged components remain normative dependencies of WEM 1.2.0. Their unchanged version SHALL NOT be interpreted as a weaker authority or partial adoption.
+Unchanged components remain normative dependencies of the WEM 1.3.0 Draft. Their unchanged version SHALL NOT be interpreted as weaker authority or partial inclusion.
 
 ---
 
@@ -178,13 +186,17 @@ ASI measures the expected scope and cost of changing a decision. It does not mea
 
 | Level | Meaning |
 | --- | --- |
-| ASI-5 | Foundational decisions |
-| ASI-4 | Repository and architectural structure |
-| ASI-3 | Framework architecture |
-| ASI-2 | Public interfaces |
-| ASI-1 | Internal implementation |
+| ASI-5 | Project foundation, final authority or method identity |
+| ASI-4 | Durable system structure, responsibility boundaries or human-governance architecture |
+| ASI-3 | Cross-component architecture, workflow or coordinated technical policy |
+| ASI-2 | Externally consumed interface, contract or compatibility boundary |
+| ASI-1 | Local internal implementation constraint |
 
 Higher ASI levels require greater engineering scrutiny.
+
+Classification SHALL reflect affected responsibility boundaries and expected reversal cost rather than artifact count, release number or perceived importance.
+
+When a decision reasonably spans two levels, it SHOULD use the higher level unless its decision record explains why the lower level adequately represents the impact and cost of reversal.
 
 ---
 
@@ -271,6 +283,10 @@ Engineering decisions SHALL be explicit.
 Significant decisions SHALL remain traceable.
 
 Foundational changes require architectural review.
+
+Every WEM specification release SHALL preserve durable, proportional assurance evidence identifying the reviewed candidate, verification, review result, review-independence disposition, Project Owner release decision and final publication references.
+
+Release assurance SHALL NOT be inferred from elapsed time, successful tool execution or publication alone.
 
 ---
 

@@ -4,7 +4,9 @@
 
 Workspace Engineering Method (WEM) is a technology-independent engineering method for designing, building and evolving sustainable software systems.
 
-**WEM 1.2.0 — Released**
+**Latest release: WEM 1.2.0 — Released**
+
+**Current development: WEM 1.3.0 — Draft**
 
 ## What is WEM?
 
@@ -23,18 +25,30 @@ WEM 1.2.0 adds a canonical, automatically progressing Project Initiation workflo
 
 WEM 1.2.0 contains these updated normative components:
 
-| Component | Candidate version |
+| Component | Component version |
 | --- | --- |
 | `WEM.md` | 1.2.0 — Released |
 | `specifications/PROJECT_INITIATION.md` | 1.0.0 — Released |
 
-The Project Charter, Engineering Principles, ADR Specification, Repository Blueprint and Agent Collaboration specification remain at their Released component versions and are normative dependencies of the candidate.
+The Project Charter, Engineering Principles, ADR Specification, Repository Blueprint and Agent Collaboration specification remain at their Released component versions and are normative dependencies of WEM 1.2.0.
+
+WEM 1.3.0 is currently Draft under Accepted `WEM-ADR-011`, `WEM-ADR-012` and `WEM-ADR-013`. It prepares project-neutral ASI semantics, durable release assurance evidence and automatic validator-adoption decisions without changing the Released `v1.2.0` tag.
+
+The current Draft changes these normative components:
+
+| Component | Draft component version |
+| --- | --- |
+| `WEM.md` | 1.3.0 — Draft |
+| `PROJECT_CHARTER.md` | 1.1.0 — Draft |
+| `specifications/ADR_SPECIFICATION.md` | 1.2.0 — Draft |
+| `specifications/AGENT_COLLABORATION.md` | 1.2.0 — Draft |
+| `specifications/PROJECT_INITIATION.md` | 1.1.0 — Draft |
 
 ## Core Idea
 
 WEM offers a concise way to orient engineering work across five connected concerns:
 
-**Thinking → Architecture → Implementation → Evolution → Knowledge**
+**Thinking → Architecture → Implementation → Evolution → Knowledge → renewed Thinking**
 
 This is an explanatory summary. See [WEM.md](WEM.md) for the maintained engineering lifecycle and its normative definition.
 
@@ -49,6 +63,11 @@ This is an explanatory summary. See [WEM.md](WEM.md) for the maintained engineer
 | [specifications/REPOSITORY_BLUEPRINT.md](specifications/REPOSITORY_BLUEPRINT.md) | Repository architecture |
 | [specifications/AGENT_COLLABORATION.md](specifications/AGENT_COLLABORATION.md) | Human and AI collaboration governance |
 | [specifications/PROJECT_INITIATION.md](specifications/PROJECT_INITIATION.md) | Automatic new-project initiation workflow |
+| [documentation/quick-start.md](documentation/quick-start.md) | Concise non-normative adoption path |
+| [templates/project-charter.md](templates/project-charter.md) | Minimal Project Charter starting structure |
+| [templates/adr.md](templates/adr.md) | Minimal ADR starting structure |
+| [examples/minimal-project.md](examples/minimal-project.md) | Small-project adoption example |
+| [knowledge/wem-orchestrator-adoption-validation.md](knowledge/wem-orchestrator-adoption-validation.md) | First adopting-project validation record |
 | [decisions/](decisions/) | Architecture Decision Records |
 | [documentation/wem-presentacio.pdf](documentation/wem-presentacio.pdf) | WEM overview presentation |
 

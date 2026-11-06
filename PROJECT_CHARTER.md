@@ -1,8 +1,8 @@
 ---
 Document: Project Charter
 Title: Workspace Engineering Method Project Charter
-Version: 1.0.0
-Status: Released
+Version: 1.1.0
+Status: Draft
 Type: Foundation
 ASI: 5
 Language: English
@@ -19,6 +19,8 @@ This charter defines why the Workspace Engineering Method (WEM) exists, the prob
 It also defines the relationship between WEM and the projects that adopt it.
 
 This charter governs the WEM project itself. It does not replace the individual charter of an adopting project.
+
+Version 1.1.0 is Draft under Accepted `WEM-ADR-012`. Version 1.0.0 remains the Released foundation until the Draft completes coherence review and receives explicit Project Owner release approval.
 
 ---
 
@@ -233,6 +235,10 @@ Feedback from adopting projects MAY result in changes to WEM. Foundational or st
 A version number alone does not make a WEM specification released.
 
 Release requires explicit approval by the Project Owner after the required cross-document coherence review.
+
+Before approving a WEM specification release, the Project Owner SHALL receive durable release assurance evidence proportional to the release. That evidence SHALL identify the candidate and base, changed scope, component versions and statuses, verification, findings, technical Review Result, review-independence disposition and authorized publication actions.
+
+The Project Owner's release decision SHALL remain distinct from the technical Review Result. A fixed waiting period is not required, but rapid dependent releases SHOULD receive additional compatibility and inherited-assumption review.
 
 ---
 
