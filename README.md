@@ -4,9 +4,7 @@
 
 Workspace Engineering Method (WEM) is a technology-independent engineering method for designing, building and evolving sustainable software systems.
 
-**Latest release: WEM 1.2.0 — Released**
-
-**Current development: WEM 1.3.0 — Draft**
+**Latest release: WEM 1.3.0 — Released**
 
 ## What is WEM?
 
@@ -18,31 +16,22 @@ The canonical definition of the method is maintained in [WEM.md](WEM.md).
 
 | | |
 | --- | --- |
-| Version | 1.2.0 |
+| Version | 1.3.0 |
 | Status | Released |
 
-WEM 1.2.0 adds a canonical, automatically progressing Project Initiation workflow under Accepted `WEM-ADR-010`. It completed coherence review and received explicit Project Owner approval on 2026-10-27.
+WEM 1.3.0 adds project-neutral ASI semantics, durable release assurance evidence and automatic structural-validator adoption decisions during Project Initiation. It completed coherence review, independent technical review and received explicit Project Owner release approval on 2026-11-07.
 
-WEM 1.2.0 contains these updated normative components:
+WEM 1.3.0 contains these updated normative components:
 
 | Component | Component version |
 | --- | --- |
-| `WEM.md` | 1.2.0 — Released |
-| `specifications/PROJECT_INITIATION.md` | 1.0.0 — Released |
+| `WEM.md` | 1.3.0 — Released |
+| `PROJECT_CHARTER.md` | 1.1.0 — Released |
+| `specifications/ADR_SPECIFICATION.md` | 1.2.0 — Released |
+| `specifications/AGENT_COLLABORATION.md` | 1.2.0 — Released |
+| `specifications/PROJECT_INITIATION.md` | 1.1.0 — Released |
 
-The Project Charter, Engineering Principles, ADR Specification, Repository Blueprint and Agent Collaboration specification remain at their Released component versions and are normative dependencies of WEM 1.2.0.
-
-WEM 1.3.0 is currently Draft under Accepted `WEM-ADR-011`, `WEM-ADR-012` and `WEM-ADR-013`. It prepares project-neutral ASI semantics, durable release assurance evidence and automatic validator-adoption decisions without changing the Released `v1.2.0` tag.
-
-The current Draft changes these normative components:
-
-| Component | Draft component version |
-| --- | --- |
-| `WEM.md` | 1.3.0 — Draft |
-| `PROJECT_CHARTER.md` | 1.1.0 — Draft |
-| `specifications/ADR_SPECIFICATION.md` | 1.2.0 — Draft |
-| `specifications/AGENT_COLLABORATION.md` | 1.2.0 — Draft |
-| `specifications/PROJECT_INITIATION.md` | 1.1.0 — Draft |
+The Engineering Principles and Repository Blueprint remain at their Released component versions and are normative dependencies of WEM 1.3.0.
 
 ## Core Idea
 
@@ -73,12 +62,12 @@ This is an explanatory summary. See [WEM.md](WEM.md) for the maintained engineer
 
 ## Adoption
 
-Projects adopt WEM as a methodology, not as a technical dependency. WEM 1.2.0 Released provides the current stable version reference while each adopting project retains responsibility for its own architecture, implementation, risks and outcomes.
+Projects adopt WEM as a methodology, not as a technical dependency. WEM 1.3.0 Released provides the current stable version reference while each adopting project retains responsibility for its own architecture, implementation, risks and outcomes.
 
 A project adopting this release can identify it as:
 
 ```text
-Methodology: WEM 1.2.0 — Released
+Methodology: WEM 1.3.0 — Released
 ```
 
 See [PROJECT_CHARTER.md](PROJECT_CHARTER.md) and [WEM.md](WEM.md) for the maintained adoption responsibilities and method definition.
@@ -91,7 +80,7 @@ The authoritative boundaries are defined by [ENGINEERING_PRINCIPLES.md](ENGINEER
 
 ## Human and AI Collaboration
 
-WEM supports role-based collaboration between human and AI participants while preserving human accountability. WEM 1.2.0 combines bounded Work Package and Milestone delivery with automatic Project Initiation so that human gates correspond to material decisions rather than procedural phase management. The maintained workflows are defined in [specifications/AGENT_COLLABORATION.md](specifications/AGENT_COLLABORATION.md) and [specifications/PROJECT_INITIATION.md](specifications/PROJECT_INITIATION.md).
+WEM supports role-based collaboration between human and AI participants while preserving human accountability. WEM 1.3.0 combines bounded Work Package and Milestone delivery, automatic Project Initiation and explicit validator-adoption decisions so that human gates correspond to material decisions rather than procedural phase management. The maintained workflows are defined in [specifications/AGENT_COLLABORATION.md](specifications/AGENT_COLLABORATION.md) and [specifications/PROJECT_INITIATION.md](specifications/PROJECT_INITIATION.md).
 
 ## License
 

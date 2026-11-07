@@ -2,7 +2,7 @@
 Document: Agent Collaboration
 Title: Workspace Engineering Method Human and AI Collaboration Governance
 Version: 1.2.0
-Status: Draft
+Status: Released
 Type: Governance
 ASI: 4
 Language: English
@@ -30,7 +30,7 @@ The keywords SHALL, SHALL NOT, SHOULD, SHOULD NOT and MAY are to be interpreted 
 
 ## Status and Authority
 
-Version 1.2.0 is Draft under Accepted `decisions/WEM-ADR-012.md`. Version 1.1.0 remains Released until this Draft completes coherence review and receives explicit Project Owner release approval.
+Version 1.2.0 is Released under Accepted `decisions/WEM-ADR-012.md`, following coherence review, independent technical review and explicit Project Owner release approval on 2026-11-07.
 
 `decisions/WEM-ADR-002.md`, `decisions/WEM-ADR-006.md` and `decisions/WEM-ADR-009.md` are Accepted. They govern the role-based, automation-ready and proportional milestone collaboration model defined here.
 

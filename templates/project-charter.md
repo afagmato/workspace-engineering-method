@@ -1,6 +1,6 @@
 # Minimal Project Charter Template
 
-> Non-normative template. Tailor it to the project and apply WEM 1.2.0 — Released. Delete instructional text after use.
+> Non-normative template. Tailor it to the project and apply WEM 1.3.0 — Released. Delete instructional text after use.
 
 ---
 Document: Project Charter
@@ -10,7 +10,7 @@ Status: Draft
 Type: Foundation
 Owner: `<Project owner role or organization>`
 Methodology: WEM
-WEM Reference: WEM 1.2.0 — Released
+WEM Reference: WEM 1.3.0 — Released
 ---
 
 # `<Project name>` Project Charter
@@ -24,7 +24,7 @@ State what this Charter establishes and what it does not authorize.
 - Project: `<name>`
 - Repository: `<repository name or not yet established>`
 - Type: `<software product, library, service, knowledge project, other>`
-- Methodology: WEM 1.2.0 — Released
+- Methodology: WEM 1.3.0 — Released
 
 ## Problem and Mission
 
@@ -65,11 +65,9 @@ Distinguish requirements from preferences and unresolved assumptions.
 
 ## WEM Adoption
 
-This project adopts WEM 1.2.0 — Released. It applies every applicable Engineering Principle and retains responsibility for its own architecture, implementation, risks, releases and outcomes.
+This project adopts WEM 1.3.0 — Released. It applies every applicable Engineering Principle and retains responsibility for its own architecture, implementation, risks, releases and outcomes.
 
 ## Structural Validation
-
-> Apply this section when using the WEM 1.3.0 Draft Project Initiation extension; projects adopting only WEM 1.2.0 may omit it.
 
 - Validator Adoption Disposition: `<Adopt, Defer or Not Applicable>`
 - Validator and compatibility profile: `<implementation and exact profile, or not yet selected>`

@@ -2,7 +2,7 @@
 Document: Project Initiation Specification
 Title: Workspace Engineering Method Project Initiation
 Version: 1.1.0
-Status: Draft
+Status: Released
 Type: Governance
 ASI: 3
 Language: English
@@ -20,9 +20,9 @@ It makes phase progression the responsibility of the assigned Architect function
 
 ## Status and Authority
 
-Version 1.1.0 is Draft under Accepted `WEM-ADR-013`. It adds mandatory automated structural-validator adoption evaluation without changing the foundation gate or final human authority.
+Version 1.1.0 is Released under Accepted `WEM-ADR-013`, following coherence review, independent technical review and explicit Project Owner release approval on 2026-11-07. It adds mandatory automated structural-validator adoption evaluation without changing the foundation gate or final human authority.
 
-Version 1.0.0 remains Released as part of WEM 1.2.0. Publication of this Draft does not initialize an adopting project, activate a validator or transfer any Project Owner authority by itself.
+Release of this specification does not initialize an adopting project, activate a validator or transfer any Project Owner authority by itself.
 
 ## Normative Language
 

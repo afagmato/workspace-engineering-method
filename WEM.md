@@ -2,7 +2,7 @@
 Document: WEM
 Title: Workspace Engineering Method
 Version: 1.3.0
-Status: Draft
+Status: Released
 Type: Foundation
 ASI: 5
 Language: English
@@ -24,7 +24,7 @@ Instead, it defines how engineering decisions are made.
 
 Projects adopting WEM SHALL follow the specifications that compose the WEM ecosystem.
 
-Version 1.3.0 is Draft under Accepted `WEM-ADR-011`, `WEM-ADR-012` and `WEM-ADR-013`. WEM 1.2.0 remains the latest Released version until this Draft completes coherence review and receives explicit Project Owner release approval.
+Version 1.3.0 is Released under Accepted `WEM-ADR-011`, `WEM-ADR-012` and `WEM-ADR-013`, following coherence review, independent technical review and explicit Project Owner release approval on 2026-11-07.
 
 ---
 
@@ -150,19 +150,19 @@ Documents SHALL reference the canonical source responsible for normative knowled
 
 ## Version Composition
 
-The WEM 1.3.0 Draft is composed of:
+WEM 1.3.0 is composed of:
 
 | Normative responsibility | Document version |
 | --- | --- |
-| Engineering method | `WEM.md` 1.3.0 Draft |
-| ADR governance | `specifications/ADR_SPECIFICATION.md` 1.2.0 Draft |
-| Human and AI collaboration governance | `specifications/AGENT_COLLABORATION.md` 1.2.0 Draft |
-| Project initiation | `specifications/PROJECT_INITIATION.md` 1.1.0 Draft |
-| Project foundation | `PROJECT_CHARTER.md` 1.1.0 Draft |
+| Engineering method | `WEM.md` 1.3.0 Released |
+| ADR governance | `specifications/ADR_SPECIFICATION.md` 1.2.0 Released |
+| Human and AI collaboration governance | `specifications/AGENT_COLLABORATION.md` 1.2.0 Released |
+| Project initiation | `specifications/PROJECT_INITIATION.md` 1.1.0 Released |
+| Project foundation | `PROJECT_CHARTER.md` 1.1.0 Released |
 | Engineering Principles | `ENGINEERING_PRINCIPLES.md` 1.0.0 |
 | Repository architecture | `specifications/REPOSITORY_BLUEPRINT.md` 1.0.0 |
 
-Unchanged components remain normative dependencies of the WEM 1.3.0 Draft. Their unchanged version SHALL NOT be interpreted as weaker authority or partial inclusion.
+Unchanged components remain normative dependencies of WEM 1.3.0. Their unchanged version SHALL NOT be interpreted as weaker authority or partial inclusion.
 
 ---
 

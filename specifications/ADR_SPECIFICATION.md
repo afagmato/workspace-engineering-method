@@ -2,7 +2,7 @@
 Document: ADR Specification
 Title: Workspace Engineering Method Architecture Decision Records
 Version: 1.2.0
-Status: Draft
+Status: Released
 Type: Governance
 ASI: 4
 Language: English
@@ -18,7 +18,7 @@ This specification defines the Architecture Decision Record (ADR) system used by
 
 It establishes when an ADR is required, what an ADR contains, how its status evolves, who may approve it and how architectural decisions remain traceable over time.
 
-Version 1.2.0 is Draft under Accepted `WEM-ADR-011`. Version 1.1.0 remains Released until this Draft completes coherence review and receives explicit Project Owner release approval.
+Version 1.2.0 is Released under Accepted `WEM-ADR-011`, following coherence review, independent technical review and explicit Project Owner release approval on 2026-11-07.
 
 ---
 

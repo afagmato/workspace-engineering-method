@@ -10,7 +10,7 @@ Status: Proposed
 Created Date: YYYY-MM-DD
 ASI Level: `<1-5>`
 Decision Authority: `<responsible human role>`
-WEM Reference: WEM 1.2.0 — Released
+WEM Reference: WEM 1.3.0 — Released
 ---
 
 # `<PROJECT>-ADR-NNN` — `<Title>`
@@ -43,7 +43,7 @@ YYYY-MM-DD
 
 ## WEM Reference
 
-WEM 1.2.0 — Released
+WEM 1.3.0 — Released
 
 ## Context
 

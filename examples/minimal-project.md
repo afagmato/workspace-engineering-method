@@ -20,14 +20,14 @@ Its Charter declares:
 ```text
 Project: Tiny Notes
 Type: Executable software product
-Methodology: WEM 1.2.0 — Released
+Methodology: WEM 1.3.0 — Released
 Project Owner and Final Authority: Maintainer
 Mission: Provide reliable local capture and retrieval of short text notes.
 ```
 
 The initial scope excludes synchronization, accounts, encryption and plugins. Those exclusions prevent speculative architecture; they do not permanently prohibit future governed evolution.
 
-When initiated through the WEM 1.3.0 Draft workflow, the project also evaluates structural validation. It records:
+The WEM 1.3.0 Initiation Run also evaluates structural validation. It records:
 
 ```text
 Validator Adoption Disposition: Adopt

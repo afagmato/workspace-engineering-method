@@ -2,7 +2,7 @@
 Document: Project Charter
 Title: Workspace Engineering Method Project Charter
 Version: 1.1.0
-Status: Draft
+Status: Released
 Type: Foundation
 ASI: 5
 Language: English
@@ -20,7 +20,7 @@ It also defines the relationship between WEM and the projects that adopt it.
 
 This charter governs the WEM project itself. It does not replace the individual charter of an adopting project.
 
-Version 1.1.0 is Draft under Accepted `WEM-ADR-012`. Version 1.0.0 remains the Released foundation until the Draft completes coherence review and receives explicit Project Owner release approval.
+Version 1.1.0 is Released under Accepted `WEM-ADR-012`, following coherence review, independent technical review and explicit Project Owner release approval on 2026-11-07.
 
 ---
 

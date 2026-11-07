@@ -1,4 +1,4 @@
-# WEM 1.2.0 Quick Start
+# WEM 1.3.0 Quick Start
 
 > Non-normative adoption guidance. The Released WEM specifications govern if this guide conflicts with them.
 
@@ -9,7 +9,7 @@ WEM can be adopted without AI agents, automation or a large document set. Start 
 Record the adopted version in the project's maintained foundation:
 
 ```text
-Methodology: WEM 1.2.0 — Released
+Methodology: WEM 1.3.0 — Released
 ```
 
 The adopting project remains responsible for its objectives, architecture, implementation, risks and outcomes.
@@ -27,13 +27,13 @@ Write one concise Project Charter that identifies:
 
 Use [the Project Charter template](../templates/project-charter.md) as a starting structure. Remove sections that are genuinely not applicable; do not invent content merely to fill a template.
 
-The WEM 1.3.0 Draft extends Project Initiation by automatically evaluating structural-validator adoption and including one decision-ready disposition in the Foundation Package:
+WEM 1.3.0 automatically evaluates structural-validator adoption during Project Initiation and includes one decision-ready disposition in the Foundation Package:
 
 - `Adopt` when a compatible, approved validator can be activated within known authority;
 - `Defer` when validation is relevant but compatibility, authority or execution capability is unresolved;
 - `Not Applicable` only with a responsibility-based rationale.
 
-Projects adopting only WEM 1.2.0 are not required to apply this Draft extension. When it is applied, the Project Owner decides the disposition at the existing foundation gate; the recommendation does not silently authorize installation, maintained configuration, CI integration or repository effects.
+The Project Owner decides the disposition at the existing foundation gate; the recommendation does not silently authorize installation, maintained configuration, CI integration or repository effects.
 
 ## 3. Govern only decisions that need governance
 
