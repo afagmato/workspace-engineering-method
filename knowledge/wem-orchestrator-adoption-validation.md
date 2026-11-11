@@ -66,6 +66,18 @@ This project does not yet establish broad or independent validation of WEM:
 - the project began before WEM 1.2.0, so it cannot validate the complete Project Initiation workflow from a clean start;
 - the repository alone does not provide a durable final-acceptance and independent-review record for the completed core-conformance MVP.
 
+## Defects found by external review
+
+Read-only review between 2026-11-03 and 2026-11-07 reproduced eleven defects in WEM Orchestrator that its own tests and review had not detected. The most serious allowed a `Changes requested` review to reach a repository action, let a denying Authority Record authorize a Run, accepted undeclared workspace changes and left the process timeout ineffective for prompts larger than about 4 KiB. Its architectural scenario test injected stop reasons by scenario identifier, so four required scenarios passed without any policy. Two knowledge statements also overstated what had been verified.
+
+WEMO-ADR-012 corrected the defects on 2026-11-11 and the corrections were committed and pushed. The live Builder run remains incomplete.
+
+Lessons for WEM:
+
+- a passing scenario demonstrates a policy only if removing the policy makes it fail;
+- agent-driven review benefits from adversarial probes, such as a fake collaborator that misbehaves, in addition to expected-path scenarios;
+- verification evidence should state what was checked rather than what the check was intended to establish.
+
 ## Active validation milestone
 
 WEMO-ADR-011 accepted and authorized the First Real Builder Validation Milestone. Its implementation has:
@@ -81,7 +93,7 @@ Completion still requires a successful live correction-cycle run, independent te
 
 ## Broader validation required
 
-A second, unrelated small project should adopt WEM 1.2.0 from a clean start. It should test Project Initiation, manual usability and proportional governance without assuming an orchestration-product domain. WEM should not treat one closely related dogfooding project as general validation across project types.
+A second, unrelated small project should adopt WEM 1.3.0 from a clean start. It should test Project Initiation, manual usability and proportional governance without assuming an orchestration-product domain. WEM should not treat one closely related dogfooding project as general validation across project types. WEM Validator, the second adopting project, is also WEM-specific and owned by the same Project Owner, so it does not provide that validation either.
 
 ## Traceability
 
@@ -89,5 +101,6 @@ A second, unrelated small project should adopt WEM 1.2.0 from a clean start. It 
 - WEM-ADR-009 — proportional Milestone delivery;
 - WEM-ADR-010 — automated Project Initiation;
 - WEM Orchestrator WEMO-ADR-009 — provider-free core-conformance MVP;
-- WEM Orchestrator WEMO-ADR-010 — adoption of WEM 1.2.0.
-- WEM Orchestrator WEMO-ADR-011 — first real Builder validation milestone.
+- WEM Orchestrator WEMO-ADR-010 — adoption of WEM 1.2.0;
+- WEM Orchestrator WEMO-ADR-011 — first real Builder validation milestone;
+- WEM Orchestrator WEMO-ADR-012 — correction of defects found by external review.

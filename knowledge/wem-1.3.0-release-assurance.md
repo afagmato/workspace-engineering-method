@@ -140,4 +140,30 @@ On 2026-11-07, the Project Owner explicitly authorized the release commit with m
 
 The annotated `v1.3.0` tag object and the corresponding `origin/main` and `origin` tag references are the designated recoverable evidence of the final commit identity, exact commit-tag relationship and publication result. The repository action SHALL stop and this record SHALL be corrected if those references cannot be verified after execution.
 
+## Post-Publication Verification
+
+Verified on 2026-11-11, after publication. This section records facts that could not be known when the release commit was created; the sections above preserve the record as it stood at that commit.
+
+- Annotated tag `v1.3.0` targets commit `7c7f28d13bd2ef254c04191061ee1c5e595f753d`.
+- `origin/main` and the remote `v1.3.0` tag both resolve to that commit.
+- WEM 1.3.0 is the latest Released version.
+
+## Post-Publication Corrections
+
+Recorded on 2026-11-11 after read-only review. These corrections do not change any normative component, so they do not create a new WEM version.
+
+### Lifecycle clarification
+
+WEM 1.3.0 added `↺ Thinking` and a sentence stating that preserved knowledge informs subsequent thinking to the Engineering Lifecycle in `WEM.md`. Neither WEM-ADR-011, WEM-ADR-012 nor WEM-ADR-013 names that change, and the Changed Artifact Scope above lists `WEM.md` without it. The change originated in a review finding that the lifecycle diagram did not show how knowledge feeds back into thinking.
+
+The clarification adds no SHALL statement and restates `WEM-P-008` — Knowledge Preservation Through Evolution. It is therefore treated as an editorial clarification under proportional governance. This record is its durable traceability.
+
+### Stale-wording audit scope
+
+The Verification Evidence above reports zero known stale wording findings. Accepted WEM-ADR-009 and WEM-ADR-012 still contain conditional phrases such as `If Accepted` in their Decision sections. Those phrases are the decision text as written before acceptance. The ADR Specification forbids rewriting the historical meaning of a decision, so they are preserved. The audit result applies to status statements and summaries, not to original decision text.
+
+### Validator profile
+
+The WEM Validator `wem-1.2.0` profile was used for this release because no WEM 1.3.0 profile existed. WEM Validator 0.4.0 adds a `wem-1.3.0` profile under WEMV-ADR-007. Validation of `v1.3.0` with that profile in Git-aware mode reports 0 errors, 0 warnings and the same 9 unsupported historical references. WEM Validator is a private repository, so projects outside the Project Owner's control cannot yet receive an `Adopt` disposition for it.
+
 ## End of Record

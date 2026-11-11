@@ -19,6 +19,9 @@ Read and apply the relevant maintained sources before acting:
 - [Automation-Ready Collaboration Decision](decisions/WEM-ADR-006.md)
 - [Proportional Milestone Delivery Decision](decisions/WEM-ADR-009.md)
 - [Automated Project Initiation Decision](decisions/WEM-ADR-010.md)
+- [Project-Neutral ASI Decision](decisions/WEM-ADR-011.md)
+- [Release Assurance Decision](decisions/WEM-ADR-012.md)
+- [Validator Adoption Decision](decisions/WEM-ADR-013.md)
 
 If this adapter conflicts with a canonical source, follow the canonical source and report the conflict.
 

@@ -1,6 +1,6 @@
 # Minimal ADR Template
 
-> Non-normative template. The [ADR Specification](../specifications/ADR_SPECIFICATION.md) is authoritative. Remove instructional text and sections that are genuinely optional.
+> Non-normative template. The [ADR Specification](https://github.com/afagmato/workspace-engineering-method/blob/v1.3.0/specifications/ADR_SPECIFICATION.md) of WEM 1.3.0 is authoritative. Remove instructional text and sections that are genuinely optional.
 
 ---
 Document: Architecture Decision Record
