@@ -166,4 +166,6 @@ The Verification Evidence above reports zero known stale wording findings. Accep
 
 The WEM Validator `wem-1.2.0` profile was used for this release because no WEM 1.3.0 profile existed. WEM Validator 0.4.0 adds a `wem-1.3.0` profile under WEMV-ADR-007. Validation of `v1.3.0` with that profile in Git-aware mode reports 0 errors, 0 warnings and the same 9 unsupported historical references. WEM Validator is a private repository, so projects outside the Project Owner's control cannot yet receive an `Adopt` disposition for it.
 
+Update on 2026-11-12: WEM Validator is now public at `https://github.com/afagmato/wem-validator` and licensed under Apache-2.0 through WEMV-ADR-008. Projects outside the Project Owner's control can therefore receive an `Adopt` disposition. Its CLI, manifest and JSON interfaces remain Draft and no package is published, so an `Adopt` disposition should pin a commit and record those limitations.
+
 ## End of Record
