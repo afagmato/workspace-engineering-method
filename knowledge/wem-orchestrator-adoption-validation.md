@@ -89,7 +89,7 @@ WEMO-ADR-011 accepted and authorized the First Real Builder Validation Milestone
 5. preserved normalized evidence without private conversation or provider-session identifiers;
 6. stopped the initial live probe when provider capability was unavailable.
 
-Completion still requires a successful live correction-cycle run, independent technical review or an explicit Project Owner exception with compensating review, a canonical Review Result and explicit final Project Owner acceptance. Detailed evidence is maintained by WEM Orchestrator in `knowledge/first-real-builder-validation-evidence.md`.
+The Milestone was completed on 2026-11-13. The live correction-cycle run passed on 2026-11-12, independent review by Codex returned `Changes requested` twice and `Accepted for the next authorized gate` on the third review, and the Project Owner then explicitly accepted the Milestone. The accepted limitations are scripted Review Results in the live test, adapters connected by the test rather than by a product command, and a single exercised provider. Three review rounds found eight blocking defects after the implementing participant's own verification had passed, which supports the WEM requirement that significant work receive review by a participant other than its author. Detailed evidence is maintained by WEM Orchestrator in `knowledge/first-real-builder-validation-evidence.md`.
 
 ## Broader validation required
 
